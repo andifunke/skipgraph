@@ -9,7 +9,7 @@ public class SearchOperation extends QueryOperation {
 	private int maxNumberOfVals;
 
 	public SearchOperation(BigDecimal valueStart, BigDecimal valueEnd, int maxNumberOfVals) {
-		super(QueryType.SEARCH);
+		//super(QueryType.SEARCH);
 		this.valueStart = valueStart;
 		this.valueEnd = valueEnd;
 		this.maxNumberOfVals = maxNumberOfVals;

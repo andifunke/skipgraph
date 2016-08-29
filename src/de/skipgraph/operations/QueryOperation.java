@@ -6,15 +6,17 @@ public abstract class QueryOperation {
 		GET, SEARCH, INPUT, DELETE
 	}
 
-	private final QueryType queryType;
+	//private final QueryType queryType;
 
-	public QueryOperation(QueryType queryType) {
+	// TODO: extend with a requester-contact
+
+	/*public QueryOperation(QueryType queryType) {
 		this.queryType = queryType;
-	}
+	}*/
 
-	public QueryType getQueryType() {
+	/*public QueryType getQueryType() {
 		return queryType;
-	}
+	}*/
 
 
 }

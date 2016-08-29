@@ -8,9 +8,18 @@ import java.util.List;
 public class SkipGraph {
 
 	private SkipGraphNode skipGraphHead;
+	private int minTableSize = 10;
+	private int maxTableSize = 100;
+
 
 	public SkipGraph() {
-		this.skipGraphHead = new SkipGraphNode();
+		this.skipGraphHead = new SkipGraphNode(minTableSize, maxTableSize);
+	}
+
+	public SkipGraph(int minTableSize, int maxTableSize) {
+		this.minTableSize = minTableSize;
+		this.maxTableSize = maxTableSize;
+		this.skipGraphHead = new SkipGraphNode(minTableSize, maxTableSize);
 	}
 
 

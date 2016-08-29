@@ -9,7 +9,7 @@ public class GetOperation extends QueryOperation {
 	 * @param index
 	 */
 	public GetOperation(int index) {
-		super(QueryType.GET);
+		//super(QueryType.GET);
 		this.index = index;
 	}
 
