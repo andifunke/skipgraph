@@ -1,8 +1,11 @@
 package de.skipgraph.operations;
 
+import de.skipgraph.SkipGraphElement;
 import de.skipgraph.SkipGraphNode;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchOperation extends QueryOperation {
 
@@ -12,11 +15,10 @@ public class SearchOperation extends QueryOperation {
 	private int maxNumberOfVals;
 
 	public SearchOperation(BigDecimal valueStart, BigDecimal valueEnd, int maxNumberOfVals) {
-		this("any", valueStart, valueEnd, maxNumberOfVals);
+		this(null, valueStart, valueEnd, maxNumberOfVals);
 	}
 
 	public SearchOperation(String capacity, BigDecimal valueStart, BigDecimal valueEnd, int maxNumberOfVals) {
-		//super(QueryType.SEARCH);
 		this.capacity = capacity;
 		this.valueStart = valueStart;
 		this.valueEnd = valueEnd;
@@ -55,6 +57,65 @@ public class SearchOperation extends QueryOperation {
 		this.capacity = capacity;
 	}
 
-	public void execute(SkipGraphNode node) {
+	@Override
+	public List<SkipGraphElement> execute(SkipGraphNode node) {
+		String endVal = valueEnd != null ? valueEnd.toString() : "infinity";
+		String capStr = capacity != null ? " for " + capacity : "";
+		System.out.println("trying to search" + capStr + " from " + valueStart + " to " + endVal);
+		if (node.isAboveElementTablesMaximum(valueStart)) {
+			System.out.println("value too big");
+			return null;
+		}
+		else if (valueEnd != null && node.isBelowElementTablesMinimum(valueEnd)) {
+			System.out.println("value too small");
+			return null;
+		}
+		else {
+			List<SkipGraphElement> list = new ArrayList<>();
+			if (capacity == null) {
+				if (valueEnd == null) {
+					for (SkipGraphElement element :
+							node.getElementTable()) {
+						if (element.getValue().compareTo(valueStart) >= 0) {
+							list.add(element);
+							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+						}
+					}
+				} else {
+					for (SkipGraphElement element :
+							node.getElementTable()) {
+						if (element.getValue().compareTo(valueStart) >= 0 &&
+								element.getValue().compareTo(valueEnd) <= 0) {
+							list.add(element);
+							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+						}
+					}
+				}
+			}
+			else {
+				if (valueEnd == null) {
+					for (SkipGraphElement element :
+							node.getElementTable()) {
+						if (capacity.equals(element.getCapacity()) &&
+								element.getValue().compareTo(valueStart) >= 0) {
+							list.add(element);
+							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+						}
+					}
+				} else {
+					for (SkipGraphElement element :
+							node.getElementTable()) {
+						if (capacity.equals(element.getCapacity()) &&
+								element.getValue().compareTo(valueStart) >= 0 &&
+								element.getValue().compareTo(valueEnd) <= 0) {
+							list.add(element);
+							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+						}
+					}
+				}
+			}
+			return list;
+		}
 	}
-	}
+
+}

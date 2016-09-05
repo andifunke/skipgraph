@@ -1,6 +1,9 @@
 package de.skipgraph.operations;
 
+import de.skipgraph.SkipGraphElement;
 import de.skipgraph.SkipGraphNode;
+
+import java.util.List;
 
 public abstract class QueryOperation {
 
@@ -8,7 +11,7 @@ public abstract class QueryOperation {
 		GET, SEARCH, INPUT, DELETE
 	}
 
-	public abstract void execute(SkipGraphNode node);
+	public abstract List<SkipGraphElement> execute(SkipGraphNode node);
 
 	//private final QueryType queryType;
 

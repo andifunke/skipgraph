@@ -93,6 +93,11 @@ public class SkipGraph {
 	}
 
 	public List<SkipGraphElement> search(String capacity, BigDecimal valueStart, BigDecimal valueEnd, int maxNumberOfVals) {
+		if (valueEnd != null && valueStart != null && valueStart.compareTo(valueEnd) > 0) {
+			BigDecimal tmp = valueEnd;
+			valueEnd = valueStart;
+			valueStart = tmp;
+		}
 		SearchOperation searchOperation = new SearchOperation(capacity, valueStart, valueEnd, maxNumberOfVals);
 		return sendQuery(searchOperation);
 	}
