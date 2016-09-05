@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5693356-6d36-4c8e-b6c6-b49aa2f410b8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/Main.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/InputOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/InputOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/QueryOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/QueryOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/UpdateOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/UpdateOperation.java" />
-    </list>
+    <list default="true" id="b5693356-6d36-4c8e-b6c6-b49aa2f410b8" name="Default" comment="" />
     <ignored path="skipgraph.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -873,7 +862,7 @@
       <workItem from="1473067824575" duration="14000" />
       <workItem from="1473067857108" duration="205000" />
       <workItem from="1473070465771" duration="9674000" />
-      <workItem from="1473110649592" duration="9154000" />
+      <workItem from="1473110649592" duration="9234000" />
     </task>
     <task id="LOCAL-00001" summary="move methods to operation classes">
       <created>1473111016157</created>
@@ -886,7 +875,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34799000" />
+    <option name="totallyTimeSpent" value="34879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1279" y="0" width="2562" height="1415" extended-state="6" />
@@ -899,7 +888,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1646778" sideWeight="0.5041225" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
