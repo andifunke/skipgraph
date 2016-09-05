@@ -35,43 +35,67 @@ public class SkipGraph {
 	  */
 	// ToDo: use return codes (boolean or int) for all methods
 
-	public SkipGraphElement get (int index) {
+	public SkipGraphElement get(int index) {
 		GetOperation getOperation = new GetOperation(index);
 		return sendQuery(getOperation).get(0);
 	}
 
-	public void input (SkipGraphElement element) {
+	public void input(SkipGraphElement element) {
 		InputOperation inputOperation = new InputOperation(element);
 		sendQuery(inputOperation);
 	}
 
-	public void delete (SkipGraphElement element) {
+	public void delete(SkipGraphElement element) {
 		DeleteOperation deleteOperation = new DeleteOperation(element);
 		sendQuery(deleteOperation);
 	}
 
-	public void update (SkipGraphElement oldElement, SkipGraphElement newElement) {
-		delete(oldElement);
-		input(newElement);
+	public void update(SkipGraphElement oldElement, SkipGraphElement newElement) {
+		if (oldElement.getCapacity().equals(newElement.getCapacity()) &&
+				oldElement.getContactIp() == newElement.getContactIp() &&
+				oldElement.getContactPort() == newElement.getContactPort()) {
+			delete(oldElement);
+			input(newElement);
+		} else {
+			System.out.println("source and capacity must be identical");
+		}
 	}
 
-	public List<SkipGraphElement> search (BigDecimal valueStart) {
+	// general search
+	public List<SkipGraphElement> search(BigDecimal valueStart) {
 		return search(valueStart, null, 0);
 	}
 
-	public List<SkipGraphElement> search (BigDecimal valueStart, int maxNumberOfVals) {
+	public List<SkipGraphElement> search(BigDecimal valueStart, int maxNumberOfVals) {
 		return search(valueStart, null, maxNumberOfVals);
 	}
 
-	public List<SkipGraphElement> search (BigDecimal valueStart, BigDecimal valueEnd) {
+	public List<SkipGraphElement> search(BigDecimal valueStart, BigDecimal valueEnd) {
 		return search(valueStart, valueEnd, 0);
 	}
 
-	public List<SkipGraphElement> search (BigDecimal valueStart, BigDecimal valueEnd, int maxNumberOfVals) {
+	public List<SkipGraphElement> search(BigDecimal valueStart, BigDecimal valueEnd, int maxNumberOfVals) {
 		SearchOperation searchOperation = new SearchOperation(valueStart, valueEnd, maxNumberOfVals);
 		return sendQuery(searchOperation);
 	}
 
+	// search for capacity
+	public List<SkipGraphElement> search(String capacity, BigDecimal valueStart) {
+		return search(capacity, valueStart, null, 0);
+	}
+
+	public List<SkipGraphElement> search(String capacity, BigDecimal valueStart, int maxNumberOfVals) {
+		return search(capacity, valueStart, null, maxNumberOfVals);
+	}
+
+	public List<SkipGraphElement> search(String capacity, BigDecimal valueStart, BigDecimal valueEnd) {
+		return search(capacity, valueStart, valueEnd, 0);
+	}
+
+	public List<SkipGraphElement> search(String capacity, BigDecimal valueStart, BigDecimal valueEnd, int maxNumberOfVals) {
+		SearchOperation searchOperation = new SearchOperation(capacity, valueStart, valueEnd, maxNumberOfVals);
+		return sendQuery(searchOperation);
+	}
 
 	/*
 		message methods
@@ -79,5 +103,7 @@ public class SkipGraph {
 	public List<SkipGraphElement> sendQuery (QueryOperation queryOperation) {
 		return skipGraphHead.execute(queryOperation);
 	}
+
+
 
 }

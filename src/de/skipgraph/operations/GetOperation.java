@@ -1,5 +1,7 @@
 package de.skipgraph.operations;
 
+import de.skipgraph.SkipGraphNode;
+
 public class GetOperation extends QueryOperation {
 
 	private int index;
@@ -13,4 +15,7 @@ public class GetOperation extends QueryOperation {
 		this.index = index;
 	}
 
-}
+	public void execute(SkipGraphNode node) {
+	}
+
+	}

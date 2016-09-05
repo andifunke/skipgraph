@@ -47,4 +47,8 @@ public class SkipGraphElement {
 	public void setContactPort(int contactPort) {
 		this.contactPort = contactPort;
 	}
+
+	public String toString() {
+		return "capacity: " + capacity + " | value: " + value + " | contact: " + contactIp + ":" + contactPort;
+	}
 }
