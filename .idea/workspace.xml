@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5693356-6d36-4c8e-b6c6-b49aa2f410b8" name="Default" comment="leave">
+    <list default="true" id="b5693356-6d36-4c8e-b6c6-b49aa2f410b8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/Main.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/InputOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/InputOperation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java" />
     </list>
     <ignored path="skipgraph.iws" />
@@ -37,8 +38,8 @@
           <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+                <state relative-caret-position="444">
+                  <caret line="78" column="44" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -47,7 +48,7 @@
           <file leaf-file-name="SkipGraph.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="326">
+                <state relative-caret-position="849">
                   <caret line="122" column="58" selection-start-line="122" selection-start-column="58" selection-end-line="122" selection-end-column="58" />
                   <folding />
                 </state>
@@ -57,8 +58,8 @@
           <file leaf-file-name="SkipGraphNode.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="520">
-                  <caret line="158" column="119" selection-start-line="158" selection-start-column="119" selection-end-line="158" selection-end-column="119" />
+                <state relative-caret-position="1950">
+                  <caret line="130" column="88" selection-start-line="130" selection-start-column="88" selection-end-line="130" selection-end-column="88" />
                   <folding />
                 </state>
               </provider>
@@ -111,8 +112,8 @@
           <file leaf-file-name="InputOperation.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/InputOperation.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="24" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                <state relative-caret-position="330">
+                  <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
                   <folding />
                 </state>
               </provider>
@@ -121,28 +122,28 @@
           <file leaf-file-name="DeleteOperation.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                <state relative-caret-position="204">
+                  <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GetOperation.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="GetOperation.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+                <state relative-caret-position="465">
+                  <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SearchOperation.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SearchOperation.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="205">
-                  <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+                <state relative-caret-position="324">
+                  <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -185,13 +186,13 @@
         <option value="$PROJECT_DIR$/src/de/skipgraph/operations/UpdateOperation.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/SkipGraphContacts.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/SkipGraphElement.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/operations/InputOperation.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/Main.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java" />
       </list>
     </option>
   </component>
@@ -880,7 +881,7 @@
       <workItem from="1473067857108" duration="205000" />
       <workItem from="1473070465771" duration="9674000" />
       <workItem from="1473110649592" duration="9234000" />
-      <workItem from="1473144986263" duration="19091000" />
+      <workItem from="1473144986263" duration="20713000" />
     </task>
     <task id="LOCAL-00001" summary="move methods to operation classes">
       <created>1473111016157</created>
@@ -903,24 +904,31 @@
       <option name="project" value="LOCAL" />
       <updated>1473163264072</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="leave">
+      <created>1473166547777</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1473166547777</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53970000" />
+    <option name="totallyTimeSpent" value="55592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1279" y="0" width="2562" height="1415" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991317" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35911602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35911602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1324,39 +1332,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/InputOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+        <state relative-caret-position="204">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+        <state relative-caret-position="324">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/GetOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
+        <state relative-caret-position="849">
           <caret line="122" column="58" selection-start-line="122" selection-start-column="58" selection-end-line="122" selection-end-column="58" />
           <folding />
         </state>
@@ -1364,16 +1372,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/SkipGraphNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="158" column="119" selection-start-line="158" selection-start-column="119" selection-end-line="158" selection-end-column="119" />
+        <state relative-caret-position="1950">
+          <caret line="130" column="88" selection-start-line="130" selection-start-column="88" selection-end-line="130" selection-end-column="88" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+        <state relative-caret-position="444">
+          <caret line="78" column="44" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
           <folding />
         </state>
       </provider>

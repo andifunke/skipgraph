@@ -2,7 +2,6 @@ package de.skipgraph;
 
 import de.skipgraph.operations.*;
 
-import java.awt.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,9 +41,15 @@ public class SkipGraphNode {
 		this.tableRangeEnd = end;
 	}
 
-	public void extendElementTable(List<SkipGraphElement> newList, BigDecimal start) {
+	public void extendElementTableAtStart(List<SkipGraphElement> newList, BigDecimal start) {
 		tableRangeStart = start;
 		elementTable.addAll(0, newList);
+		checkTableSize();
+	}
+
+	public void extendElementTableAtEnd(List<SkipGraphElement> newList, BigDecimal end) {
+		tableRangeEnd = end;
+		elementTable.addAll(newList);
 		checkTableSize();
 	}
 
@@ -104,6 +109,7 @@ public class SkipGraphNode {
 	public void checkTableSize() {
 		if (elementTable.size() < minTableSize) {
 			System.out.println("  ! table too small -> leave?");
+			leave();
 		} else if (elementTable.size() > maxTableSize) {
 			System.out.println("  ! table too big -> split");
 			split();
@@ -116,12 +122,30 @@ public class SkipGraphNode {
 
 	private void leave() {
 
+		// check if successor has enough free space in table
+		if (contacts.getNext() != this && contacts.getNext().getNumberOfFreeSlots() > elementTable.size()) {
+			contacts.getNext().extendElementTableAtStart(elementTable, tableRangeStart);
+			updatingContactsOnLeave();
+		}
+		// else check if predecessor has enough free space in table
+		else if (contacts.getPrev() != this && contacts.getPrev().getNumberOfFreeSlots() > elementTable.size()) {
+			contacts.getNext().extendElementTableAtEnd(elementTable, tableRangeEnd);
+			updatingContactsOnLeave();
+		}
+		else {
+			System.out.println("  ! hold your ground");
+		}
+	}
+
+	private void updatingContactsOnLeave() {
+		contacts.getNext().getContacts().setPrev(contacts.getPrev());
+		contacts.getPrev().getContacts().setNext(contacts.getNext());
+		System.out.println("  ! bye bye");
 	}
 
 	private void split() {
 		Collections.sort(elementTable);
-		printTable();
-
+		//printTable();
 
 		// split element table
 		int roundup = 0;
@@ -132,19 +156,19 @@ public class SkipGraphNode {
 		BigDecimal newStart = elementTable.get(elementTable.size()-1).getValue();
 		BigDecimal newEnd = tableRangeEnd;
 		tableRangeEnd = newStart;
-		printTable();
+		//printTable();
 
 		// check if successor can handle split elements
 		if (newTable.size() < contacts.getNext().getNumberOfFreeSlots()) {
-			contacts.getNext().extendElementTable(newTable, newStart);
-			contacts.getNext().printTable();
+			contacts.getNext().extendElementTableAtStart(newTable, newStart);
+			//contacts.getNext().printTable();
 		}
 		else {
 			// create new node
 			SkipGraphNode newNode = new SkipGraphNode(minTableSize, maxTableSize);
 			newNode.setContacts(new SkipGraphContacts(this, contacts.getNext()));
 			newNode.setElementTable(newTable, newStart, newEnd);
-			newNode.printTable();
+			//newNode.printTable();
 
 			// update prev contact of next node
 			contacts.getNext().getContacts().setPrev(newNode);

@@ -67,17 +67,17 @@ public class SearchOperation extends QueryOperation {
 
 		// search range is above the node's table range ?
 		if (node.isAboveElementTablesMaximum(valueStart)) {
-			//System.out.println("  ! value too big");
+			System.out.print("-> next: ");
 			return node.getContacts().getNext().execute(this);
 		}
 		// search range is below the node's table range ?
 		else if (valueEnd != null && node.isBelowElementTablesMinimum(valueEnd)) {
-			//System.out.println("  ! value too small");
+			System.out.print("-> prev: ");
 			return node.getContacts().getPrev().execute(this);
 		}
 		// search starts below the node's table range ?
 		else if (valueStart != null && node.isBelowElementTablesMinimum(valueStart)) {
-			//System.out.println("  ! value too small");
+			System.out.print("-> prev: ");
 			return node.getContacts().getPrev().execute(this);
 		}
 		// search starts inside the node's table range.
@@ -143,6 +143,7 @@ public class SearchOperation extends QueryOperation {
 					}
 					// System.out.println("maximum " + maxNumberOfVals + " values");
 					valueStart = node.getTableRangeEnd();
+					System.out.print("-> next: ");
 					retList.addAll(node.getContacts().getNext().execute(this));
 				}
 			}

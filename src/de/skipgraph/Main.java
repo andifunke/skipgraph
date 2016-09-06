@@ -77,6 +77,13 @@ public class Main {
 		skipGraph.printResult(skipGraph.search(new BigDecimal(20)));
 		skipGraph.printResult(skipGraph.search(new BigDecimal(20), 3));
 		skipGraph.printResult(skipGraph.search(new BigDecimal(10), 10));
+
+		System.out.println(headline("testing leave"));
+		skipGraph.delete(new SkipGraphElement("BW", new BigDecimal(20), 4, 987));
+		skipGraph.delete(new SkipGraphElement("BW", new BigDecimal(40), 1, 1230));
+		skipGraph.delete(new SkipGraphElement("MEM", new BigDecimal(80), 2, 4560));
+		skipGraph.printGraph();
+
 	}
 
 	public static String headline(String s) {

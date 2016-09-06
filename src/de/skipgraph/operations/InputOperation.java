@@ -17,10 +17,10 @@ public class InputOperation extends UpdateOperation {
 		BigDecimal value = this.getElement().getValue();
 		//System.out.println("trying to add: " + this.getElement());
 		if (node.isBelowElementTablesMinimum(value)) {
-			System.out.println("  ! value too small");
+			System.out.println("  ! value too small -> prev");
 			node.getContacts().getPrev().execute(this);
 		} else if (node.isAboveElementTablesMaximum(value)) {
-			System.out.println("  ! value too big");
+			System.out.println("  ! value too big -> next");
 			node.getContacts().getNext().execute(this);
 		} else {
 			node.getElementTable().add(this.getElement());

@@ -29,6 +29,7 @@ public class GetOperation extends QueryOperation {
 			return returnList;
 		} else if (node.getTableRangeEnd() != null) {
 			index -= node.getElementTable().size();
+			System.out.print("-> next: ");
 			return node.getContacts().getNext().execute(this);
 		} else {
 			System.out.println("  ! index out of bounds");
