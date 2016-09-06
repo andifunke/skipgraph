@@ -61,7 +61,8 @@ public class SearchOperation extends QueryOperation {
 	public List<SkipGraphElement> execute(SkipGraphNode node) {
 		String endVal = valueEnd != null ? valueEnd.toString() : "infinity";
 		String capStr = capacity != null ? " for " + capacity : "";
-		System.out.println("trying to search" + capStr + " from " + valueStart + " to " + endVal);
+		String maxStr = maxNumberOfVals > 0 ? " (maximum " + maxNumberOfVals + " values)" : "";
+		System.out.println("searching" + capStr + " from " + valueStart + " to " + endVal + maxStr);
 		if (node.isAboveElementTablesMaximum(valueStart)) {
 			System.out.println("value too big");
 			return null;

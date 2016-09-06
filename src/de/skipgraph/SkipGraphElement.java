@@ -2,7 +2,7 @@ package de.skipgraph;
 
 import java.math.BigDecimal;
 
-public class SkipGraphElement {
+public class SkipGraphElement implements Comparable<SkipGraphElement>{
 
 	private String capacity;
 	private BigDecimal value;
@@ -49,6 +49,18 @@ public class SkipGraphElement {
 	}
 
 	public String toString() {
-		return "capacity: " + capacity + " | value: " + value + " | contact: " + contactIp + ":" + contactPort;
+		return String.format("(%s, %s, %s:%d)", value, capacity, intToIp(contactIp), contactPort);
+	}
+
+	public static String intToIp(int i) {
+		return ((i >> 24 ) & 0xFF) + "." +
+				((i >> 16 ) & 0xFF) + "." +
+				((i >>  8 ) & 0xFF) + "." +
+				( i        & 0xFF);
+	}
+
+	@Override
+	public int compareTo(SkipGraphElement t) {
+		return this.value.compareTo(t.getValue());
 	}
 }

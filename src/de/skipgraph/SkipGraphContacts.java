@@ -23,4 +23,19 @@ public class SkipGraphContacts {
 		this.next = next;
 	}
 
+	public SkipGraphNode getPrev() {
+		return prev;
+	}
+
+	public void setPrev(SkipGraphNode prev) {
+		this.prev = prev;
+	}
+
+	public SkipGraphNode getNext() {
+		return next;
+	}
+
+	public void setNext(SkipGraphNode next) {
+		this.next = next;
+	}
 }

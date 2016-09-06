@@ -15,15 +15,14 @@ public class DeleteOperation extends UpdateOperation {
 
 	@Override
 	public List<SkipGraphElement> execute(SkipGraphNode node) {
-		System.out.println("trying to delete " + this.getElement().toString());
 		BigDecimal value = this.getElement().getValue();
 		String capacity = this.getElement().getCapacity();
 		int contactIp = this.getElement().getContactIp();
 		int contactPort = this.getElement().getContactPort();
 		if (node.isBelowElementTablesMinimum(value)) {
-			System.out.println("value too small");
+			System.out.println("  ! value too small");
 		} else if (node.isAboveElementTablesMaximum(value)) {
-			System.out.println("value too big");
+			System.out.println("  ! value too big");
 		} else {
 			try {
 				boolean success = false;
@@ -38,13 +37,13 @@ public class DeleteOperation extends UpdateOperation {
 					}
 				}
 				if (success) {
-					System.out.println("element deleted");
+					System.out.println("deleting: " + this.getElement());
 					node.checkTableSize();
 				}
 				else {
-					System.out.println("element not found");
+					System.out.println("not found: " + this.getElement());
 				}
-				node.printTable();
+				//node.printTable();
 			} catch (ConcurrentModificationException e) {
 				System.out.println("ConcurrentModificationException");
 				e.getCause();

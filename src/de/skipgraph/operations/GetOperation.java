@@ -21,14 +21,14 @@ public class GetOperation extends QueryOperation {
 
 	@Override
 	public List<SkipGraphElement> execute(SkipGraphNode node) {
-		System.out.println("trying to get element " + index);
+		System.out.println("trying to get element #" + index);
 
 		if (index < node.getElementTable().size()) {
 			List<SkipGraphElement> returnList = new ArrayList<>();
 			returnList.add(node.getElementTable().get(index));
 			return returnList;
 		} else {
-			System.out.println("index out of bounds");
+			System.out.println("  ! index out of bounds");
 			return null;
 		}
 	}
