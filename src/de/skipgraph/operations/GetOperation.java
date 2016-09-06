@@ -27,9 +27,13 @@ public class GetOperation extends QueryOperation {
 			List<SkipGraphElement> returnList = new ArrayList<>();
 			returnList.add(node.getElementTable().get(index));
 			return returnList;
+		} else if (node.getTableRangeEnd() != null) {
+			index -= node.getElementTable().size();
+			return node.getContacts().getNext().execute(this);
 		} else {
 			System.out.println("  ! index out of bounds");
 			return null;
 		}
+
 	}
 }

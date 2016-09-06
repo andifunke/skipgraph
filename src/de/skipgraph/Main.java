@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		// building SkipGraph
-		SkipGraph skipGraph = new SkipGraph(5,10);
+		SkipGraph skipGraph = new SkipGraph(3,10);
 //		skipGraph.printGraph();
 		List<SkipGraphElement> elements = new LinkedList<>();
 		elements.add(new SkipGraphElement("CPU", new BigDecimal(2), 1, 1230));
@@ -55,7 +55,6 @@ public class Main {
 		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 2, 7890));
 		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 3, 1231));
 		skipGraph.printGraph();
-		System.exit(0);
 
 		System.out.println(headline("testing get"));
 		try {
@@ -66,6 +65,10 @@ public class Main {
 			skipGraph.printResult(skipGraph.get(13));
 		} catch (NullPointerException e) {
 		}
+		try {
+			skipGraph.printResult(skipGraph.get(130));
+		} catch (NullPointerException e) {
+		}
 
 		System.out.println(headline("testing search"));
 		skipGraph.printResult(skipGraph.search("CPU", new BigDecimal(2), new BigDecimal(20)));
@@ -73,6 +76,7 @@ public class Main {
 		skipGraph.printResult(skipGraph.search("CPU", new BigDecimal(2)));
 		skipGraph.printResult(skipGraph.search(new BigDecimal(20)));
 		skipGraph.printResult(skipGraph.search(new BigDecimal(20), 3));
+		skipGraph.printResult(skipGraph.search(new BigDecimal(10), 10));
 	}
 
 	public static String headline(String s) {

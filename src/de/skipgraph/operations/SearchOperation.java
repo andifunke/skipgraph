@@ -59,63 +59,94 @@ public class SearchOperation extends QueryOperation {
 
 	@Override
 	public List<SkipGraphElement> execute(SkipGraphNode node) {
+		// debug infos:
 		String endVal = valueEnd != null ? valueEnd.toString() : "infinity";
 		String capStr = capacity != null ? " for " + capacity : "";
 		String maxStr = maxNumberOfVals > 0 ? " (maximum " + maxNumberOfVals + " values)" : "";
 		System.out.println("searching" + capStr + " from " + valueStart + " to " + endVal + maxStr);
+
+		// search range is above the node's table range ?
 		if (node.isAboveElementTablesMaximum(valueStart)) {
-			System.out.println("value too big");
-			return null;
+			//System.out.println("  ! value too big");
+			return node.getContacts().getNext().execute(this);
 		}
+		// search range is below the node's table range ?
 		else if (valueEnd != null && node.isBelowElementTablesMinimum(valueEnd)) {
-			System.out.println("value too small");
-			return null;
+			//System.out.println("  ! value too small");
+			return node.getContacts().getPrev().execute(this);
 		}
+		// search starts below the node's table range ?
+		else if (valueStart != null && node.isBelowElementTablesMinimum(valueStart)) {
+			//System.out.println("  ! value too small");
+			return node.getContacts().getPrev().execute(this);
+		}
+		// search starts inside the node's table range.
 		else {
-			List<SkipGraphElement> list = new ArrayList<>();
+			List<SkipGraphElement> retList = new ArrayList<>();
+
+			// search without capacity
 			if (capacity == null) {
+				// open end
 				if (valueEnd == null) {
 					for (SkipGraphElement element :
 							node.getElementTable()) {
 						if (element.getValue().compareTo(valueStart) >= 0) {
-							list.add(element);
-							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+							retList.add(element);
+							if (maxNumberOfVals > 0 && retList.size() >= maxNumberOfVals) return retList;
 						}
 					}
+				// closed end
 				} else {
 					for (SkipGraphElement element :
 							node.getElementTable()) {
 						if (element.getValue().compareTo(valueStart) >= 0 &&
 								element.getValue().compareTo(valueEnd) <= 0) {
-							list.add(element);
-							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+							retList.add(element);
+							if (maxNumberOfVals > 0 && retList.size() >= maxNumberOfVals) return retList;
 						}
 					}
 				}
 			}
+
+			// search with capacity
 			else {
+				// open end
 				if (valueEnd == null) {
 					for (SkipGraphElement element :
 							node.getElementTable()) {
 						if (capacity.equals(element.getCapacity()) &&
 								element.getValue().compareTo(valueStart) >= 0) {
-							list.add(element);
-							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+							retList.add(element);
+							if (maxNumberOfVals > 0 && retList.size() >= maxNumberOfVals) return retList;
 						}
 					}
+				// closed end
 				} else {
 					for (SkipGraphElement element :
 							node.getElementTable()) {
 						if (capacity.equals(element.getCapacity()) &&
 								element.getValue().compareTo(valueStart) >= 0 &&
 								element.getValue().compareTo(valueEnd) <= 0) {
-							list.add(element);
-							if (maxNumberOfVals > 0 && list.size() >= maxNumberOfVals) break;
+							retList.add(element);
+							if (maxNumberOfVals > 0 && retList.size() >= maxNumberOfVals) return retList;
 						}
 					}
 				}
 			}
-			return list;
+
+			// give search to next node if required
+			if (node.getTableRangeEnd() != null) {
+				//System.out.println("end: " + node.getTableRangeEnd());
+				if (valueEnd == null || node.isAboveElementTablesMaximum(valueEnd)) {
+					if (maxNumberOfVals > 0) {
+						maxNumberOfVals -= retList.size();
+					}
+					// System.out.println("maximum " + maxNumberOfVals + " values");
+					valueStart = node.getTableRangeEnd();
+					retList.addAll(node.getContacts().getNext().execute(this));
+				}
+			}
+			return retList;
 		}
 	}
 

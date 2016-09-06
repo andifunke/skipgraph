@@ -64,7 +64,7 @@ public class SkipGraphNode {
 		return queryOperation.execute(this);
 	}
 
-	// TODO: intervall nach unten offen
+	// TODO: replace with compareTo ?
 	/**
 	 * checks if a given value is below or equal to the minimum value of the element table
 	 * @param value
@@ -155,8 +155,8 @@ public class SkipGraphNode {
 	}
 
 	public void printTable() {
-		System.out.println(String.format("### printing table (min:%s, max:%s, size:%d) ###",
-				tableRangeStart, tableRangeEnd==null?"inf":tableRangeEnd, elementTable.size()));
+		System.out.println(String.format("### printing table (start:%s, end:%s, size:%d, min-size:%d, max-size:%d) ###",
+				tableRangeStart, tableRangeEnd==null?"inf":tableRangeEnd, elementTable.size(), minTableSize, maxTableSize));
 		Collections.sort(elementTable);
 		for (int i=0; i < elementTable.size(); i++) {
 			String index = String.format("%03d ", i);

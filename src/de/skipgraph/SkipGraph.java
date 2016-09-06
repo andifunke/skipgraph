@@ -120,7 +120,7 @@ public class SkipGraph {
 	}
 
 	public void printGraph() {
-		System.out.println("### PRINTING GRAPH ###");
+		System.out.println(Main.headline("printing graph"));
 		int i = 0;
 		System.out.print(String.format("### %02d ", i));
 		skipGraphHead.printTable();
