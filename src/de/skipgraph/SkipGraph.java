@@ -120,15 +120,16 @@ public class SkipGraph {
 	}
 
 	public void printGraph() {
+		System.out.println("### PRINTING GRAPH ###");
 		int i = 0;
 		System.out.print(String.format("### %02d ", i));
 		skipGraphHead.printTable();
-		SkipGraphNode next = skipGraphHead.getContactsTable().getNext();
+		SkipGraphNode next = skipGraphHead.getContacts().getNext();
 		while (next != null && next != skipGraphHead) {
 			i++;
-			System.out.println(String.format("%03d ", i));
+			System.out.print(String.format("### %02d ", i));
 			next.printTable();
-			next = next.getContactsTable().getNext();
+			next = next.getContacts().getNext();
 		}
 
 	}

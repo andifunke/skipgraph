@@ -2,10 +2,10 @@ package de.skipgraph;
 
 import de.skipgraph.operations.*;
 
+import java.awt.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class SkipGraphNode {
@@ -17,7 +17,7 @@ public class SkipGraphNode {
 	private List<SkipGraphElement> elementTable;
 	private BigDecimal tableRangeStart;
 	private BigDecimal tableRangeEnd;
-	private SkipGraphContacts contactsTable;
+	private SkipGraphContacts contacts;
 
 	public SkipGraphNode(int minTableSize, int maxTableSize) {
 		this.minTableSize = minTableSize;
@@ -25,7 +25,7 @@ public class SkipGraphNode {
 		this.elementTable = new ArrayList<>();
 		this.tableRangeStart = BigDecimal.ZERO;
 		this.tableRangeEnd = null; // initial null-value means: no upper limit (= infinity)
-		this.contactsTable = new SkipGraphContacts(this, this);
+		this.contacts = new SkipGraphContacts(this, this);
 	}
 
 	public List<SkipGraphElement> getElementTable() {
@@ -36,16 +36,28 @@ public class SkipGraphNode {
 		this.elementTable = elementTable;
 	}
 
+	public void setElementTable(List<SkipGraphElement> elementTable, BigDecimal start, BigDecimal end) {
+		this.elementTable = elementTable;
+		this.tableRangeStart = start;
+		this.tableRangeEnd = end;
+	}
+
+	public void extendElementTable(List<SkipGraphElement> newList, BigDecimal start) {
+		tableRangeStart = start;
+		elementTable.addAll(0, newList);
+		checkTableSize();
+	}
+
 	public BigDecimal getTableRangeEnd() {
 		return tableRangeEnd;
 	}
 
-	public SkipGraphContacts getContactsTable() {
-		return contactsTable;
+	public SkipGraphContacts getContacts() {
+		return contacts;
 	}
 
-	public void setContactsTable(SkipGraphContacts contactsTable) {
-		this.contactsTable = contactsTable;
+	public void setContacts(SkipGraphContacts contacts) {
+		this.contacts = contacts;
 	}
 
 	public List<SkipGraphElement> execute(QueryOperation queryOperation) {
@@ -54,18 +66,21 @@ public class SkipGraphNode {
 
 	// TODO: intervall nach unten offen
 	/**
-	 * checks if a given value is below the minimum value of the element table
+	 * checks if a given value is below or equal to the minimum value of the element table
 	 * @param value
 	 * @return
 	 */
 	public boolean isBelowElementTablesMinimum(BigDecimal value) {
-		//
+		//System.out.println(String.format("%s (value) <= %s (start) ?", value, tableRangeStart));
+		boolean ret;
 		if (value == null) {
-			return !(tableRangeStart == null);
+			ret = !(tableRangeStart == null);
 		}
 		else {
-			return !(tableRangeStart != null && tableRangeStart.compareTo(value) <= 0);
+			ret = !(tableRangeStart != null && tableRangeStart.compareTo(value) <= 0);
 		}
+		//System.out.println(ret);
+		return ret;
 	}
 
 	/**
@@ -74,12 +89,16 @@ public class SkipGraphNode {
 	 * @return
 	 */
 	public boolean isAboveElementTablesMaximum(BigDecimal value) {
+		//System.out.println(String.format("%s (value) > %s (end) ?", value, tableRangeEnd));
+		boolean ret;
 		if (value == null) {
-			return !(tableRangeEnd == null);
+			ret = !(tableRangeEnd == null);
 		}
 		else {
-			return (tableRangeEnd != null && tableRangeEnd.compareTo(value) >= 0);
+			ret = tableRangeEnd != null && tableRangeEnd.compareTo(value) < 0;
 		}
+		//System.out.println(ret);
+		return ret;
 	}
 
 	public void checkTableSize() {
@@ -87,7 +106,7 @@ public class SkipGraphNode {
 			System.out.println("  ! table too small -> leave?");
 		} else if (elementTable.size() > maxTableSize) {
 			System.out.println("  ! table too big -> split");
-			//split();
+			split();
 		}
 	}
 
@@ -103,26 +122,41 @@ public class SkipGraphNode {
 		Collections.sort(elementTable);
 		printTable();
 
+
 		// split element table
-		List<SkipGraphElement> tmp=elementTable.subList(elementTable.size()/2, elementTable.size());
-		ArrayList newList=new ArrayList<>(tmp);
+		int roundup = 0;
+		if (elementTable.size() % 2 > 0) roundup = 1;
+		List<SkipGraphElement> tmp = elementTable.subList(elementTable.size()/2+roundup, elementTable.size());
+		ArrayList<SkipGraphElement> newTable = new ArrayList<>(tmp);
 		tmp.clear();
+		BigDecimal newStart = elementTable.get(elementTable.size()-1).getValue();
+		BigDecimal newEnd = tableRangeEnd;
+		tableRangeEnd = newStart;
 		printTable();
 
-		// create new node
-		SkipGraphNode newNode = new SkipGraphNode(minTableSize, maxTableSize);
-		newNode.setElementTable(newList);
-		newNode.printTable();
+		// check if successor can handle split elements
+		if (newTable.size() < contacts.getNext().getNumberOfFreeSlots()) {
+			contacts.getNext().extendElementTable(newTable, newStart);
+			contacts.getNext().printTable();
+		}
+		else {
+			// create new node
+			SkipGraphNode newNode = new SkipGraphNode(minTableSize, maxTableSize);
+			newNode.setContacts(new SkipGraphContacts(this, contacts.getNext()));
+			newNode.setElementTable(newTable, newStart, newEnd);
+			newNode.printTable();
 
-		// update contacts
-		newNode.getContactsTable().setPrev(this);
-		newNode.getContactsTable().setNext(contactsTable.getNext());
-		contactsTable.getNext().getContactsTable().setPrev(newNode);
-		contactsTable.setNext(newNode);
+			// update prev contact of next node
+			contacts.getNext().getContacts().setPrev(newNode);
+			// update next contact of this node
+			contacts.setNext(newNode);
+		}
+
 	}
 
 	public void printTable() {
-		System.out.println("### printing table (size " + elementTable.size() + ") ###");
+		System.out.println(String.format("### printing table (min:%s, max:%s, size:%d) ###",
+				tableRangeStart, tableRangeEnd==null?"inf":tableRangeEnd, elementTable.size()));
 		Collections.sort(elementTable);
 		for (int i=0; i < elementTable.size(); i++) {
 			String index = String.format("%03d ", i);

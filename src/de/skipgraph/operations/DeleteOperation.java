@@ -21,8 +21,10 @@ public class DeleteOperation extends UpdateOperation {
 		int contactPort = this.getElement().getContactPort();
 		if (node.isBelowElementTablesMinimum(value)) {
 			System.out.println("  ! value too small");
+			node.getContacts().getPrev().execute(this);
 		} else if (node.isAboveElementTablesMaximum(value)) {
 			System.out.println("  ! value too big");
+			node.getContacts().getNext().execute(this);
 		} else {
 			try {
 				boolean success = false;

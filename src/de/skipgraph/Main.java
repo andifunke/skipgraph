@@ -26,25 +26,36 @@ public class Main {
 
 		System.out.println(headline("testing input"));
 		elements.forEach(skipGraph::input);
-		skipGraph.printGraph();
+		//skipGraph.printGraph();
+
 		elements.clear();
 		elements.add(new SkipGraphElement("CPU", new BigDecimal(1), 3, 7890));
 		elements.add(new SkipGraphElement("BW", new BigDecimal(10), 3, 7890));
 		elements.add(new SkipGraphElement("MEM", new BigDecimal(100), 3, 7890));
 		elements.add(new SkipGraphElement("STOR", new BigDecimal(1000), 3, 7890));
+		elements.add(new SkipGraphElement("CPU", new BigDecimal(2), 4, 987));
+		elements.add(new SkipGraphElement("BW", new BigDecimal(20), 4, 987));
+		elements.add(new SkipGraphElement("MEM", new BigDecimal(200), 4, 987));
+		elements.add(new SkipGraphElement("STOR", new BigDecimal(2000), 4, 987));
+		elements.add(new SkipGraphElement("CPU", new BigDecimal(0.5), 5, 987));
+		elements.add(new SkipGraphElement("BW", new BigDecimal(2.7), 5, 987));
+		elements.add(new SkipGraphElement("MEM", new BigDecimal(10.1234), 5, 987));
+		elements.add(new SkipGraphElement("STOR", new BigDecimal(5), 5, 987));
+		elements.add(new SkipGraphElement("CPU", new BigDecimal(5000), 6, 987));
 		elements.forEach(skipGraph::input);
 		skipGraph.printGraph();
-		System.exit(0);
 
 		System.out.println(headline("testing delete"));
 		skipGraph.delete(elements.get(3));
 		skipGraph.delete(elements.get(3));
 
 		System.out.println(headline("testing update"));
-		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 1, 1230));
-		skipGraph.update(elements.get(2), new SkipGraphElement("BW", new BigDecimal(9), 1, 1230));
-		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 2, 1230));
-		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 1, 1231));
+		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 3, 7890));
+		skipGraph.update(elements.get(2), new SkipGraphElement("BW", new BigDecimal(9), 3, 7890));
+		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 2, 7890));
+		skipGraph.update(elements.get(2), new SkipGraphElement("MEM", new BigDecimal(9), 3, 1231));
+		skipGraph.printGraph();
+		System.exit(0);
 
 		System.out.println(headline("testing get"));
 		try {
