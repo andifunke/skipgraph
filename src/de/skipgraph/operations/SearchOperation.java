@@ -68,17 +68,17 @@ public class SearchOperation extends QueryOperation {
 		// search range is above the node's table range ?
 		if (node.isAboveElementTablesMaximum(valueStart)) {
 			System.out.print("-> next: ");
-			return node.getContacts().getNext().execute(this);
+			return node.getContactTable().getNextNodeForValue(valueStart).execute(this);
 		}
 		// search range is below the node's table range ?
 		else if (valueEnd != null && node.isBelowElementTablesMinimum(valueEnd)) {
 			System.out.print("-> prev: ");
-			return node.getContacts().getPrev().execute(this);
+			return node.getContactTable().getPrevNodeForValue(valueStart).execute(this);
 		}
 		// search starts below the node's table range ?
 		else if (valueStart != null && node.isBelowElementTablesMinimum(valueStart)) {
 			System.out.print("-> prev: ");
-			return node.getContacts().getPrev().execute(this);
+			return node.getContactTable().getPrevNodeForValue(valueStart).execute(this);
 		}
 		// search starts inside the node's table range.
 		else {
@@ -134,7 +134,7 @@ public class SearchOperation extends QueryOperation {
 				}
 			}
 
-			// give search to next node if required
+			// give search to next node if required (i.e. valueEnd >= tableRrangeEnd)
 			if (node.getTableRangeEnd() != null) {
 				//System.out.println("end: " + node.getTableRangeEnd());
 				if (valueEnd == null || node.isAboveElementTablesMaximum(valueEnd)) {
@@ -144,7 +144,7 @@ public class SearchOperation extends QueryOperation {
 					// System.out.println("maximum " + maxNumberOfVals + " values");
 					valueStart = node.getTableRangeEnd();
 					System.out.print("-> next: ");
-					retList.addAll(node.getContacts().getNext().execute(this));
+					retList.addAll(node.getContactTable().getNextNode().execute(this));
 				}
 			}
 			return retList;

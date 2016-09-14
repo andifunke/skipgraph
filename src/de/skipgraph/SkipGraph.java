@@ -1,6 +1,7 @@
 package de.skipgraph;
 
 import de.skipgraph.operations.*;
+
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
@@ -27,8 +28,9 @@ public class SkipGraph {
 	/*
 	 local administration methodes - only for distributed skip graph
 	  */
-	public void initialize() {	}
-	public void join() {	}
+	public void initialize() { }
+
+	public void join() { }
 
 	/*
 	 global query methods
@@ -56,7 +58,8 @@ public class SkipGraph {
 				oldElement.getContactPort() == newElement.getContactPort()) {
 			delete(oldElement);
 			input(newElement);
-		} else {
+		}
+		else {
 			System.out.println("! " + oldElement + "->" + newElement + " <= source and capacity must be identical");
 		}
 	}
@@ -105,7 +108,7 @@ public class SkipGraph {
 	/*
 		message methods
 		 */
-	public List<SkipGraphElement> sendQuery (QueryOperation queryOperation) {
+	public List<SkipGraphElement> sendQuery(QueryOperation queryOperation) {
 		return skipGraphHead.execute(queryOperation);
 	}
 
@@ -124,17 +127,14 @@ public class SkipGraph {
 		int i = 0;
 		System.out.print(String.format("### %02d ", i));
 		skipGraphHead.printTable();
-		SkipGraphNode next = skipGraphHead.getContacts().getNext();
+		SkipGraphNode next = skipGraphHead.getContactTable().getNextNode();
 		while (next != null && next != skipGraphHead) {
 			i++;
 			System.out.print(String.format("### %02d ", i));
 			next.printTable();
-			next = next.getContacts().getNext();
+			next = next.getContactTable().getNextNode();
 		}
 
 	}
-
-
-
 
 }

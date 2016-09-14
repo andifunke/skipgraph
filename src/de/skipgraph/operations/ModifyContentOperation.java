@@ -2,12 +2,12 @@ package de.skipgraph.operations;
 
 import de.skipgraph.SkipGraphElement;
 
-public abstract class UpdateOperation extends QueryOperation {
+public abstract class ModifyContentOperation extends QueryOperation {
 
 
 	private final SkipGraphElement element;
 
-	public UpdateOperation(SkipGraphElement element) {
+	public ModifyContentOperation(SkipGraphElement element) {
 		this.element = element;
 	}
 

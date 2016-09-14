@@ -52,6 +52,11 @@ public class SkipGraphElement implements Comparable<SkipGraphElement>{
 		return String.format("(%s, %s, %s:%d)", value, capacity, intToIp(contactIp), contactPort);
 	}
 
+	/**
+	 * Methode erstellt String-IP aus gegebenem int
+	 * @param i		beliebiger Integer, der eine IPv4-Adresse repräsentiert
+	 * @return		als IP formatierter String
+	 */
 	public static String intToIp(int i) {
 		return ((i >> 24 ) & 0xFF) + "." +
 				((i >> 16 ) & 0xFF) + "." +
