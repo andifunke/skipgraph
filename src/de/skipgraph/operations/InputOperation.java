@@ -1,19 +1,19 @@
 package de.skipgraph.operations;
 
-import de.skipgraph.SkipGraphElement;
-import de.skipgraph.SkipGraphNode;
+import de.skipgraph.Element;
+import de.skipgraph.Node;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public class InputOperation extends ModifyContentOperation {
+public class InputOperation extends ModifyElementsOperation {
 
-	public InputOperation(SkipGraphElement element) {
+	public InputOperation(Element element) {
 		super(element);
 	}
 
 	@Override
-	public List<SkipGraphElement> execute(SkipGraphNode node) {
+	public List<Element> execute(Node node) {
 
 		//System.out.println("trying to add: " + this.getElement());
 
@@ -21,11 +21,11 @@ public class InputOperation extends ModifyContentOperation {
 		BigDecimal value = this.getElement().getValue();
 
 		// if node is not responsible for value forward query to prev or next node on highest possible level
-		if (node.isBelowElementTablesMinimum(value)) {
+		if (node.getElementTable().isBelowElementTablesMinimum(value)) {
 			System.out.println("  ! value too small -> prev");
 			node.getContactTable().getPrevNodeForValue(value).execute(this);
 		}
-		else if (node.isAboveElementTablesMaximum(value)) {
+		else if (node.getElementTable().isAboveElementTablesMaximum(value)) {
 			System.out.println("  ! value too big -> next");
 			node.getContactTable().getNextNodeForValue(value).execute(this);
 		}
@@ -34,8 +34,8 @@ public class InputOperation extends ModifyContentOperation {
 			node.getElementTable().add(this.getElement());
 			System.out.println("adding: " + this.getElement());
 			// TODO: sortieren?
-			//node.printTable();
-			node.checkMaxTableSize();
+			//node.printElementTable();
+			node.getElementTable().checkMaxTableSize(node);
 		}
 		return null;
 	}

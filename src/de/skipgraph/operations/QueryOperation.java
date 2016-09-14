@@ -1,7 +1,7 @@
 package de.skipgraph.operations;
 
-import de.skipgraph.SkipGraphElement;
-import de.skipgraph.SkipGraphNode;
+import de.skipgraph.Element;
+import de.skipgraph.Node;
 
 import java.util.List;
 
@@ -11,7 +11,12 @@ public abstract class QueryOperation {
 		GET, SEARCH, INPUT, DELETE
 	}
 
-	public abstract List<SkipGraphElement> execute(SkipGraphNode node);
+	/**
+	 *
+	 * @param node	parameter should be the node executing the query, so the query can call methodes on the node
+	 * @return		returns a list of skip graph elements (for search-queries). may be null for other queries.
+	 */
+	public abstract List<Element> execute(Node node);
 
 	//private final QueryType queryType;
 

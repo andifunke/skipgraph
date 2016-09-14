@@ -2,29 +2,29 @@ package de.skipgraph;
 
 import java.math.BigDecimal;
 
-public class SkipGraphContact {
+public class Contact {
 
-	private SkipGraphNode node;
+	private Node node;
 	private BigDecimal rangeStart;
 	private BigDecimal rangeEnd;
 
-	public SkipGraphContact(SkipGraphNode node) {
+	public Contact(Node node) {
 		this.node = node;
-		this.rangeStart = null;
-		this.rangeEnd = null;
+		this.rangeStart = node.getElementTable().getRangeStart();
+		this.rangeEnd = node.getElementTable().getRangeEnd();
 	}
 
-	public SkipGraphContact(SkipGraphNode node, BigDecimal rangeStart, BigDecimal rangeEnd) {
+	public Contact(Node node, BigDecimal rangeStart, BigDecimal rangeEnd) {
 		this.node = node;
 		this.rangeStart = rangeStart;
 		this.rangeEnd = rangeEnd;
 	}
 
-	public SkipGraphNode getNode() {
+	public Node getNode() {
 		return node;
 	}
 
-	public void setNode(SkipGraphNode node) {
+	public void setNode(Node node) {
 		this.node = node;
 	}
 

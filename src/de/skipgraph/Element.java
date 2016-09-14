@@ -2,14 +2,14 @@ package de.skipgraph;
 
 import java.math.BigDecimal;
 
-public class SkipGraphElement implements Comparable<SkipGraphElement>{
+public class Element implements Comparable<Element>{
 
 	private String capacity;
 	private BigDecimal value;
 	private int contactIp;
 	private int contactPort;
 
-	public SkipGraphElement(String capacity, BigDecimal value, int contactIp, int contactPort) {
+	public Element(String capacity, BigDecimal value, int contactIp, int contactPort) {
 		this.capacity = capacity;
 		this.value = value;
 		this.contactIp = contactIp;
@@ -65,7 +65,7 @@ public class SkipGraphElement implements Comparable<SkipGraphElement>{
 	}
 
 	@Override
-	public int compareTo(SkipGraphElement t) {
+	public int compareTo(Element t) {
 		return this.value.compareTo(t.getValue());
 	}
 }
