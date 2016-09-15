@@ -32,10 +32,11 @@ public class JoinLevelOperation extends ModifyContactsOperation {
 			//thisNode.getContactTable().joinLevels();
 			// TODO: deactivcate next 2 lines
 			//System.out.println("#as#dasd#"+thisNode.getContactTable().size());
-			byte newPrefix = 0;//(byte)(Math.random() + 0.5);
+			byte newPrefix = (byte)(Math.random() + 0.5);
 			Contact selfContact = thisNode.thisContact();
 			ContactLevel temporarySelfContactLevel = new ContactLevel(selfContact, selfContact, newPrefix);
 			thisNode.getContactTable().addLevel(temporarySelfContactLevel);
+			return null;
 		}
 
 		// local variables

@@ -126,7 +126,7 @@ public class ContactTable {
 	 */
 	public void joinLevels() {
 		while (node.getContactTable().getLevel(size()-1).getNextContact().getNode() != node) {
-			byte prefix = 0;//(byte)(Math.random() + 0.5);
+			byte prefix = (byte)(Math.random() + 0.5);
 			Contact selfContact = node.thisContact();
 			ContactLevel temporarySelfContactLevel = new ContactLevel(selfContact, selfContact, prefix);
 			node.getContactTable().addLevel(temporarySelfContactLevel);
