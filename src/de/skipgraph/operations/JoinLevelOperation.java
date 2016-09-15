@@ -1,5 +1,6 @@
 package de.skipgraph.operations;
 
+import de.skipgraph.Contact;
 import de.skipgraph.ContactLevel;
 import de.skipgraph.Element;
 import de.skipgraph.Node;
@@ -31,8 +32,9 @@ public class JoinLevelOperation extends ModifyContactsOperation {
 			//thisNode.getContactTable().joinLevels();
 			// TODO: deactivcate next 2 lines
 			//System.out.println("#as#dasd#"+thisNode.getContactTable().size());
-			byte newPrefix = (byte)(Math.random() + 0.5);
-			ContactLevel temporarySelfContactLevel = new ContactLevel(thisNode.thisContact(), thisNode.thisContact(), newPrefix);
+			byte newPrefix = 0;//(byte)(Math.random() + 0.5);
+			Contact selfContact = thisNode.thisContact();
+			ContactLevel temporarySelfContactLevel = new ContactLevel(selfContact, selfContact, newPrefix);
 			thisNode.getContactTable().addLevel(temporarySelfContactLevel);
 		}
 

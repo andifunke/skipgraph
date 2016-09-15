@@ -20,7 +20,8 @@ public class Node {
 	public Node(int elementTableMinSize, int elementTableMaxSize) {
 		this.elementTable = new ElementTable(elementTableMinSize, elementTableMaxSize);
 		this.contactTable = new ContactTable(this);
-		this.contactTable.addLevel(new ContactLevel(thisContact(), thisContact(), (byte)0));
+		Contact selfContact = thisContact();
+		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, (byte)0));
 	}
 
 	/**
@@ -37,7 +38,8 @@ public class Node {
 	public Node(ElementTable elementTable) {
 		this.elementTable = elementTable;
 		this.contactTable = new ContactTable(this);
-		this.contactTable.addLevel(new ContactLevel(thisContact(), thisContact(), (byte)0));
+		Contact selfContact = thisContact();
+		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, (byte)0));
 	}
 
 	public Node(ElementTable elementTable, ContactTable contactTable) {
@@ -102,6 +104,7 @@ public class Node {
 		}
 		// otherwise create a new Node and make it join the SkipGraph as new successor on level 0
 		else {
+			// local variable
 			Contact nextContact = getContactTable().getLevel(0).getNextContact();
 
 			// create new node

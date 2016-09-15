@@ -27,8 +27,8 @@ public class ContactLevel {
 		this.prevContact = prevContact;
 	}
 
-	public void setPrevContact(Node prevNode) {
-		this.nextContact = new Contact(prevNode);
+	public void setPrevContact(Node node) {
+		this.prevContact = new Contact(node);
 	}
 
 	public Contact getNextContact() {
@@ -39,8 +39,8 @@ public class ContactLevel {
 		this.nextContact = nextContact;
 	}
 
-	public void setNextContact(Node nextNode) {
-		this.nextContact = new Contact(nextNode);
+	public void setNextContact(Node node) {
+		this.nextContact = new Contact(node);
 	}
 
 	public byte getPrefix() {
