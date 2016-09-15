@@ -43,7 +43,7 @@ public class Node {
 	public Node(ElementTable elementTable, ContactTable contactTable) {
 		this.elementTable = elementTable;
 		this.contactTable = contactTable;
-		contactTable.initiallyJoinLevels();
+		contactTable.joinLevels();
 	}
 
 	public ElementTable getElementTable() {
@@ -95,8 +95,9 @@ public class Node {
 		// split element table
 		ElementTable newElementTable = elementTable.split();
 
-		// check if successor can handle separated elements
-		if (newElementTable.size() < nextNode.getElementTable().getNumberOfFreeSlots()) {
+		// check if successor != this && can handle separated elements
+		if (nextNode != this &&
+				newElementTable.size() < nextNode.getElementTable().getNumberOfFreeSlots()) {
 			nextNode.elementTable.extendElementTableAtStart(newElementTable, nextNode);
 		}
 		// otherwise create a new Node and make it join the SkipGraph as new successor on level 0
@@ -109,7 +110,6 @@ public class Node {
 			ContactTable newContactTable = new ContactTable(newNode);
 			newContactTable.addLevel(new ContactLevel(thisContact(), nextContact, (byte)0));
 			newNode.setContactTable(newContactTable);
-			newNode.getContactTable().initiallyJoinLevels();
 
 			// inform NextNode of new PrevNode
 			ModifyContactsOperation setPrevOnNext = new SetContactOperation((short)0, (byte)0, PREV, newNode);
@@ -117,6 +117,9 @@ public class Node {
 
 			// update own nextContact
 			getContactTable().getLevel(0).setNextContact(newNode);
+
+			// make newNode join the graph on all levels
+			newNode.getContactTable().joinLevels();
 		}
 
 	}

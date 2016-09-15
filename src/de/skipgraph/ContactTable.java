@@ -55,9 +55,17 @@ public class ContactTable {
 	public Node getNextNodeForValue(BigDecimal value) {
 		// TODO: durch Iterator ersetzen
 		for (int i=size()-1; i>-1; i--) {
-			if (getLevel(i).getNextContact().getRangeStart().compareTo(value) > 0) continue;
+			// check whether nextNode's rangeStart is actually higher (avoid feedback loop)
+			if (node.getElementTable().getRangeStart().compareTo(getLevel(i).getNextContact().getRangeStart()) >= 0) {
+				continue;
+			}
+			// check whether nextNode's rangeStart exceeds value
+			else if (getLevel(i).getNextContact().getRangeStart().compareTo(value) > 0) {
+				continue;
+			}
 			return getNextNodeOnLevel(i);
 		}
+		// fallback to level 0
 		return getNextNodeOnLevel(0);
 	}
 
@@ -116,13 +124,14 @@ public class ContactTable {
 	 * given that a node has prev and next contacts on level 0 it builds up prev and next contacts on higher levels
 	 * until it gets to a level where it is its own contact
 	 */
-	public void initiallyJoinLevels() {
+	public void joinLevels() {
 		while (node.getContactTable().getLevel(size()-1).getNextContact().getNode() != node) {
 			byte prefix = (byte)(Math.random() + 0.5);
 			ContactLevel temporarySelfContactLevel = new ContactLevel(node.thisContact(), node.thisContact(), prefix);
 			node.getContactTable().addLevel(temporarySelfContactLevel);
-			ModifyContactsOperation joinLevel = new JoinLevelOperation(size(), prefix, node);
-			node.getContactTable().getNextNode().execute(joinLevel);
+			ModifyContactsOperation joinLevel = new JoinLevelOperation(size()-1, prefix, node);
+			node.getContactTable().getLevel(size()-2).getNextContact().getNode().execute(joinLevel);
+			//System.out.println(size());
 		}
 	}
 

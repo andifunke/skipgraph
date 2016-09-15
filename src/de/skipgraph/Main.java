@@ -8,6 +8,15 @@ public class Main {
 
 	public static void main(String[] args) {
 
+/*		int sum = 0;
+		for (int i=0; i<100000; i++) {
+			byte prefix = (byte)(Math.random() + 0.5);
+			System.out.println(prefix);
+			sum += prefix;
+			System.out.println(sum);
+		}
+		System.exit(0);
+*/
 		// building SkipGraph
 		SkipGraph skipGraph = new SkipGraph(3, 10);
 		//skipGraph.printGraph();
@@ -39,7 +48,7 @@ public class Main {
 		elements.add(new Element("STOR", new BigDecimal(2000), 4, 987));
 		elements.add(new Element("CPU", new BigDecimal("0.5"), 5, 987));
 		elements.add(new Element("BW", new BigDecimal("2.7"), 5, 987));
-		elements.add(new Element("MEM", new BigDecimal(10.1234), 5, 987));
+		elements.add(new Element("MEM", new BigDecimal("10.1234"), 5, 987));
 		elements.add(new Element("STOR", new BigDecimal(5), 5, 987));
 		elements.add(new Element("CPU", new BigDecimal(5000), 6, 987));
 		elements.forEach(skipGraph::input);
