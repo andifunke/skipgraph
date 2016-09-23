@@ -26,8 +26,8 @@ public class JoinLevelOperation extends ModifyContactsOperation {
 	@Override
 	public List<Element> execute(Node thisNode) {
 
-		System.out.println("node executing the joinLevelOperation: "+thisNode);
-		System.out.println(this);
+		//System.out.println("node executing the joinLevelOperation: "+thisNode);
+		//System.out.println(this);
 		//System.out.println("#aaa#aaa#"+thisNode.getContactTable().size());
 
 		if (thisNode.getContactTable().size() <= level) {

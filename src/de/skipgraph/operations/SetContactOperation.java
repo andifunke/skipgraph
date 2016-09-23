@@ -33,7 +33,7 @@ public class SetContactOperation extends ModifyContactsOperation {
 
 	@Override
 	public List<Element> execute(Node thisNode) {
-		System.out.println(thisNode);
+		//System.out.println(thisNode);
 		// in a perfect world this case should never be true
 		if (thisNode.getContactTable().getLevel(level).getPrefix() != prefix) {
 			System.out.println("**********************************but it is");

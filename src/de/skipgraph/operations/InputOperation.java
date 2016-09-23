@@ -22,11 +22,11 @@ public class InputOperation extends ModifyElementsOperation {
 
 		// if node is not responsible for value forward query to prev or next node on highest possible level
 		if (node.getElementTable().isBelowElementTablesMinimum(value)) {
-			System.out.println("  ! value too small -> prev");
+			//System.out.println("  ! value too small -> prev");
 			node.getContactTable().getPrevNodeForValue(value).execute(this);
 		}
 		else if (node.getElementTable().isAboveElementTablesMaximum(value)) {
-			System.out.println("  ! value too big -> next");
+			//System.out.println("  ! value too big -> next");
 			node.getContactTable().getNextNodeForValue(value).execute(this);
 		}
 		// node is responsible for value.

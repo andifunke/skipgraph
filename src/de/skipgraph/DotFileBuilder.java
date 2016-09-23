@@ -39,10 +39,8 @@ public class DotFileBuilder {
 		// format horizontal subgraphs with "real"-edges
 		StringBuilder sbHorizontal = new StringBuilder();
 
-		int i = 0;
 		Node next = head;
 		do {
-			i++;
 			sbVertical.append(formatVerticalForNode(next));
 			sbContent.append(formatElementTableForNode(next));
 			addToLevelMap(next);

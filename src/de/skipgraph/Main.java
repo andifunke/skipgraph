@@ -76,7 +76,7 @@ public class Main {
 			elements.add(new Element(capacity, value, ip, port));
 		}
 		elements.forEach(skipGraph::input);
-		//skipGraph.print();
+		skipGraph.print();
 		skipGraph.buildDotFile("final.dot");
 		System.exit(0);
 

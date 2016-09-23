@@ -122,7 +122,7 @@ public class ContactTable {
 			node.getContactTable().addLevel(temporarySelfContactLevel);
 			ModifyContactsOperation joinLevel = new JoinLevelOperation(size()-1, prefix, node);
 			node.getContactTable().getLevel(size()-2).getNextContact().getNode().execute(joinLevel);
-			System.out.println("Size: "+size());
+			//System.out.println("Size: "+size());
 		}
 		Main.skipGraph.buildDotFile(counter+"_1_afterJoin.dot");
 	}
