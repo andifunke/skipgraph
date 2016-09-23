@@ -12,15 +12,19 @@ import static de.skipgraph.operations.ModifyContactsOperation.ContactType.*;
 public class ContactTable {
 
 	private final Node node;
+	private LinkedList<ContactLevel> contactTable = new LinkedList<>();
+
 
 	public ContactTable(Node node) {
 		this.node = node;
 	}
 
-	private LinkedList<ContactLevel> contactTable = new LinkedList<>();
-
 	public int size() {
 		return contactTable.size();
+	}
+
+	public ContactLevel get(int i) {
+		return contactTable.get(i);
 	}
 
 	public boolean addLevel(ContactLevel level) {
@@ -104,29 +108,15 @@ public class ContactTable {
 		System.out.println("  ! bye bye");
 	}
 
-	/* // replaced by queryOperations
-	void updatingContactsOnLeave() {
-		for (int i=0; i<size(); i++) {
-			// using local variables for better readability
-			Node currentPrev = getPrefix(i).getPrevContact().getNode();
-			Node currentNext = getPrefix(i).getNextContact().getNode();
-
-			// updating the prevNode of nextNode
-			currentNext.getContactTable().getPrefix(i).getPrevContact().setNode(currentPrev);
-			// updating the nextNode of prevNode
-			currentPrev.getContactTable().getPrefix(i).getNextContact().setNode(currentNext);
-		}
-		System.out.println("  ! bye bye");
-	}
-	*/
-
 	/**
 	 * given that a node has prev and next contacts on level 0 it builds up prev and next contacts on higher levels
 	 * until it gets to a level where it is its own contact
 	 */
 	public void joinLevels() {
+		int counter = Main.skipGraph.getCounter();
+		Main.skipGraph.buildDotFile(counter+"_0_beforeJoin.dot");
 		while (node.getContactTable().getLevel(size()-1).getNextContact().getNode() != node) {
-			byte prefix = (byte)(Math.random() + 0.5);
+			byte prefix = SkipGraph.generatePrefix();
 			Contact selfContact = node.thisContact();
 			ContactLevel temporarySelfContactLevel = new ContactLevel(selfContact, selfContact, prefix);
 			node.getContactTable().addLevel(temporarySelfContactLevel);
@@ -134,6 +124,17 @@ public class ContactTable {
 			node.getContactTable().getLevel(size()-2).getNextContact().getNode().execute(joinLevel);
 			System.out.println("Size: "+size());
 		}
+		Main.skipGraph.buildDotFile(counter+"_1_afterJoin.dot");
+	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(String.format("--- contact table (size:%d)\n", size()));
+		for (int i=0; i<size(); i++) {
+			String index = String.format("level %02d, prefix %d ", i, get(i).getPrefix());
+			sb.append(index + get(i) + "\n");
+		}
+		return sb.toString();
 	}
 
 }

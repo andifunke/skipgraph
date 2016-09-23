@@ -1,0 +1,437 @@
+strict
+digraph SkipGraph {
+
+	# vertical
+	edge [dir=none style=dashed]
+	subgraph {
+		"5990E510" -> "5990E510.0" -> "5990E510.1" -> "5990E510.2" -> "5990E510.3"
+		}
+	subgraph {
+		"2EC9A27C" -> "2EC9A27C.0" -> "2EC9A27C.1" -> "2EC9A27C.2" -> "2EC9A27C.3" -> "2EC9A27C.4"
+		}
+	subgraph {
+		"1C8A5D37" -> "1C8A5D37.0" -> "1C8A5D37.1" -> "1C8A5D37.2" -> "1C8A5D37.3"
+		}
+	subgraph {
+		"67CB3D64" -> "67CB3D64.0" -> "67CB3D64.1" -> "67CB3D64.2" -> "67CB3D64.3" -> "67CB3D64.4" -> "67CB3D64.5"
+		}
+	subgraph {
+		"2781F80D" -> "2781F80D.0" -> "2781F80D.1" -> "2781F80D.2"
+		}
+	subgraph {
+		"37B1D295" -> "37B1D295.0" -> "37B1D295.1" -> "37B1D295.2" -> "37B1D295.3"
+		}
+	subgraph {
+		"7B68EB5A" -> "7B68EB5A.0" -> "7B68EB5A.1" -> "7B68EB5A.2" -> "7B68EB5A.3" -> "7B68EB5A.4"
+		}
+	subgraph {
+		"152728B7" -> "152728B7.0" -> "152728B7.1" -> "152728B7.2" -> "152728B7.3" -> "152728B7.4"
+		}
+	subgraph {
+		"48AE17F7" -> "48AE17F7.0" -> "48AE17F7.1" -> "48AE17F7.2" -> "48AE17F7.3"
+		}
+	subgraph {
+		"2CB4C23B" -> "2CB4C23B.0" -> "2CB4C23B.1" -> "2CB4C23B.2" -> "2CB4C23B.3" -> "2CB4C23B.4" -> "2CB4C23B.5"
+		}
+	subgraph {
+		"0F31105F" -> "0F31105F.0"
+		}
+
+	# horizontal
+	edge [dir=forward, style=solid]
+	subgraph cluster_content {
+		rank = same
+		"5990E510" [shape=box, label=
+			<
+				<B>ID:</B> 5990E510<BR ALIGN="LEFT"/>
+				responsible for <B>[0, 2.7)</B><BR ALIGN="LEFT"/>
+				000 (0.5, CPU, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				001 (1, CPU, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				002 (2, CPU, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				003 (2, CPU, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				004 (2.7, BW, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+			<B>size:</B>5, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"2EC9A27C" [shape=box, label=
+			<
+				<B>ID:</B> 2EC9A27C<BR ALIGN="LEFT"/>
+				responsible for <B>[2.7, 16)</B><BR ALIGN="LEFT"/>
+				000 (4, BW, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				001 (5, STOR, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				002 (8, MEM, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				003 (10, BW, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				004 (10.1234, MEM, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				005 (16, STOR, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+			<B>size:</B>6, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"1C8A5D37" [shape=box, label=
+			<
+				<B>ID:</B> 1C8A5D37<BR ALIGN="LEFT"/>
+				responsible for <B>[16, 100)</B><BR ALIGN="LEFT"/>
+				000 (20, CPU, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				001 (20, BW, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				002 (40, BW, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				003 (80, MEM, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				004 (100, MEM, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+			<B>size:</B>5, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"67CB3D64" [shape=box, label=
+			<
+				<B>ID:</B> 67CB3D64<BR ALIGN="LEFT"/>
+				responsible for <B>[100, 389)</B><BR ALIGN="LEFT"/>
+				000 (160, STOR, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				001 (160, STOR, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				002 (162, BW, 0.0.32.215:5509)<BR ALIGN="LEFT"/>
+				003 (200, MEM, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				004 (225, STOR, 0.0.1.215:2624)<BR ALIGN="LEFT"/>
+				005 (389, MEM, 0.0.37.60:1662)<BR ALIGN="LEFT"/>
+			<B>size:</B>6, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"2781F80D" [shape=box, label=
+			<
+				<B>ID:</B> 2781F80D<BR ALIGN="LEFT"/>
+				responsible for <B>[389, 2000)</B><BR ALIGN="LEFT"/>
+				000 (754, MEM, 0.0.35.234:8313)<BR ALIGN="LEFT"/>
+				001 (1000, STOR, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				002 (1069, STOR, 0.0.11.216:8472)<BR ALIGN="LEFT"/>
+				003 (1070, MEM, 0.0.23.68:4136)<BR ALIGN="LEFT"/>
+				004 (1434, BW, 0.0.29.100:8371)<BR ALIGN="LEFT"/>
+				005 (2000, STOR, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+			<B>size:</B>6, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"37B1D295" [shape=box, label=
+			<
+				<B>ID:</B> 37B1D295<BR ALIGN="LEFT"/>
+				responsible for <B>[2000, 3904)</B><BR ALIGN="LEFT"/>
+				000 (2233, MEM, 0.0.1.67:7649)<BR ALIGN="LEFT"/>
+				001 (2321, MEM, 0.0.34.180:5373)<BR ALIGN="LEFT"/>
+				002 (2410, CPU, 0.0.36.167:8014)<BR ALIGN="LEFT"/>
+				003 (2422, STOR, 0.0.6.207:9188)<BR ALIGN="LEFT"/>
+				004 (2445, CPU, 0.0.16.44:6499)<BR ALIGN="LEFT"/>
+				005 (2925, MEM, 0.0.31.106:5655)<BR ALIGN="LEFT"/>
+				006 (3487, MEM, 0.0.17.4:4789)<BR ALIGN="LEFT"/>
+				007 (3875, CPU, 0.0.30.155:4698)<BR ALIGN="LEFT"/>
+				008 (3904, STOR, 0.0.6.229:5971)<BR ALIGN="LEFT"/>
+			<B>size:</B>9, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"7B68EB5A" [shape=box, label=
+			<
+				<B>ID:</B> 7B68EB5A<BR ALIGN="LEFT"/>
+				responsible for <B>[3904, 5693)</B><BR ALIGN="LEFT"/>
+				000 (4490, BW, 0.0.17.31:7580)<BR ALIGN="LEFT"/>
+				001 (4558, CPU, 0.0.4.234:9046)<BR ALIGN="LEFT"/>
+				002 (5000, CPU, 0.0.0.6:987)<BR ALIGN="LEFT"/>
+				003 (5563, MEM, 0.0.9.176:4362)<BR ALIGN="LEFT"/>
+				004 (5691, CPU, 0.0.29.164:3525)<BR ALIGN="LEFT"/>
+				005 (5693, BW, 0.0.2.161:3929)<BR ALIGN="LEFT"/>
+			<B>size:</B>6, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"152728B7" [shape=box, label=
+			<
+				<B>ID:</B> 152728B7<BR ALIGN="LEFT"/>
+				responsible for <B>[5693, 6406)</B><BR ALIGN="LEFT"/>
+				000 (5713, BW, 0.0.18.52:266)<BR ALIGN="LEFT"/>
+				001 (6094, BW, 0.0.27.47:7811)<BR ALIGN="LEFT"/>
+				002 (6095, CPU, 0.0.20.5:3137)<BR ALIGN="LEFT"/>
+				003 (6136, BW, 0.0.20.47:5112)<BR ALIGN="LEFT"/>
+				004 (6406, MEM, 0.0.17.104:9152)<BR ALIGN="LEFT"/>
+			<B>size:</B>5, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"48AE17F7" [shape=box, label=
+			<
+				<B>ID:</B> 48AE17F7<BR ALIGN="LEFT"/>
+				responsible for <B>[6406, 6865)</B><BR ALIGN="LEFT"/>
+				000 (6472, STOR, 0.0.21.15:5431)<BR ALIGN="LEFT"/>
+				001 (6620, BW, 0.0.23.193:7888)<BR ALIGN="LEFT"/>
+				002 (6633, STOR, 0.0.11.159:141)<BR ALIGN="LEFT"/>
+				003 (6825, MEM, 0.0.31.120:1958)<BR ALIGN="LEFT"/>
+				004 (6865, BW, 0.0.22.73:9318)<BR ALIGN="LEFT"/>
+			<B>size:</B>5, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"2CB4C23B" [shape=box, label=
+			<
+				<B>ID:</B> 2CB4C23B<BR ALIGN="LEFT"/>
+				responsible for <B>[6865, 9121)</B><BR ALIGN="LEFT"/>
+				000 (7217, BW, 0.0.21.95:8624)<BR ALIGN="LEFT"/>
+				001 (8610, BW, 0.0.6.196:2340)<BR ALIGN="LEFT"/>
+				002 (8798, CPU, 0.0.35.138:4326)<BR ALIGN="LEFT"/>
+				003 (8905, MEM, 0.0.0.56:3784)<BR ALIGN="LEFT"/>
+				004 (9121, STOR, 0.0.30.148:4463)<BR ALIGN="LEFT"/>
+			<B>size:</B>5, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+		"0F31105F" [shape=box, label=
+			<
+				<B>ID:</B> 0F31105F<BR ALIGN="LEFT"/>
+				responsible for <B>[9121, inf)</B><BR ALIGN="LEFT"/>
+				000 (9309, MEM, 0.0.22.57:1504)<BR ALIGN="LEFT"/>
+				001 (9424, MEM, 0.0.4.224:3126)<BR ALIGN="LEFT"/>
+				002 (9620, BW, 0.0.27.104:1411)<BR ALIGN="LEFT"/>
+				003 (9632, CPU, 0.0.21.135:3731)<BR ALIGN="LEFT"/>
+				004 (9816, CPU, 0.0.3.207:7693)<BR ALIGN="LEFT"/>
+			<B>size:</B>5, <B>min-size:</B>3, <B>max-size:</B>9<BR ALIGN="LEFT"/>			>]
+	}
+
+	edge [color=blue]
+	subgraph 0 {
+		rank = same
+		label = "Level 0"
+		subgraph {
+			"5990E510.0" -> "2EC9A27C.0"
+			"5990E510.0" -> "0F31105F.0"
+		}
+		subgraph {
+			"2EC9A27C.0" -> "1C8A5D37.0"
+			"2EC9A27C.0" -> "5990E510.0"
+		}
+		subgraph {
+			"1C8A5D37.0" -> "67CB3D64.0"
+			"1C8A5D37.0" -> "2EC9A27C.0"
+		}
+		subgraph {
+			"67CB3D64.0" -> "2781F80D.0"
+			"67CB3D64.0" -> "1C8A5D37.0"
+		}
+		subgraph {
+			"2781F80D.0" -> "37B1D295.0"
+			"2781F80D.0" -> "67CB3D64.0"
+		}
+		subgraph {
+			"37B1D295.0" -> "7B68EB5A.0"
+			"37B1D295.0" -> "2781F80D.0"
+		}
+		subgraph {
+			"7B68EB5A.0" -> "152728B7.0"
+			"7B68EB5A.0" -> "37B1D295.0"
+		}
+		subgraph {
+			"152728B7.0" -> "48AE17F7.0"
+			"152728B7.0" -> "7B68EB5A.0"
+		}
+		subgraph {
+			"48AE17F7.0" -> "2CB4C23B.0"
+			"48AE17F7.0" -> "152728B7.0"
+		}
+		subgraph {
+			"2CB4C23B.0" -> "0F31105F.0"
+			"2CB4C23B.0" -> "48AE17F7.0"
+		}
+		subgraph {
+			"0F31105F.0" -> "5990E510.0"
+			"0F31105F.0" -> "2CB4C23B.0"
+		}
+	}
+
+	edge [color=red]
+	subgraph 00 {
+		rank = same
+		label = "Level 1 (0)"
+		subgraph {
+			"1C8A5D37.1" -> "2781F80D.1"
+			"1C8A5D37.1" -> "48AE17F7.1"
+		}
+		subgraph {
+			"2781F80D.1" -> "48AE17F7.1"
+			"2781F80D.1" -> "1C8A5D37.1"
+		}
+		subgraph {
+			"48AE17F7.1" -> "1C8A5D37.1"
+			"48AE17F7.1" -> "2781F80D.1"
+		}
+	}
+
+	edge [color=green]
+	subgraph 000 {
+		rank = same
+		label = "Level 2 (00)"
+		subgraph {
+			"1C8A5D37.2" -> "48AE17F7.2"
+			"1C8A5D37.2" -> "48AE17F7.2"
+		}
+		subgraph {
+			"2781F80D.2" -> "2781F80D.2"
+			"2781F80D.2" -> "2781F80D.2"
+		}
+		subgraph {
+			"48AE17F7.2" -> "1C8A5D37.2"
+			"48AE17F7.2" -> "1C8A5D37.2"
+		}
+	}
+
+	edge [color=orange]
+	subgraph 0000 {
+		rank = same
+		label = "Level 3 (000)"
+		subgraph {
+			"48AE17F7.3" -> "48AE17F7.3"
+			"48AE17F7.3" -> "48AE17F7.3"
+		}
+	}
+
+	edge [color=cyan]
+	subgraph 0001 {
+		rank = same
+		label = "Level 3 (001)"
+		subgraph {
+			"1C8A5D37.3" -> "1C8A5D37.3"
+			"1C8A5D37.3" -> "1C8A5D37.3"
+		}
+	}
+
+	edge [color=violet]
+	subgraph 01 {
+		rank = same
+		label = "Level 1 (1)"
+		subgraph {
+			"5990E510.1" -> "2EC9A27C.1"
+			"5990E510.1" -> "2CB4C23B.1"
+		}
+		subgraph {
+			"2EC9A27C.1" -> "67CB3D64.1"
+			"2EC9A27C.1" -> "5990E510.1"
+		}
+		subgraph {
+			"67CB3D64.1" -> "37B1D295.1"
+			"67CB3D64.1" -> "2EC9A27C.1"
+		}
+		subgraph {
+			"37B1D295.1" -> "7B68EB5A.1"
+			"37B1D295.1" -> "67CB3D64.1"
+		}
+		subgraph {
+			"7B68EB5A.1" -> "152728B7.1"
+			"7B68EB5A.1" -> "37B1D295.1"
+		}
+		subgraph {
+			"152728B7.1" -> "2CB4C23B.1"
+			"152728B7.1" -> "7B68EB5A.1"
+		}
+		subgraph {
+			"2CB4C23B.1" -> "5990E510.1"
+			"2CB4C23B.1" -> "152728B7.1"
+		}
+	}
+
+	edge [color=forestgreen]
+	subgraph 010 {
+		rank = same
+		label = "Level 2 (10)"
+		subgraph {
+			"5990E510.2" -> "37B1D295.2"
+			"5990E510.2" -> "37B1D295.2"
+		}
+		subgraph {
+			"37B1D295.2" -> "5990E510.2"
+			"37B1D295.2" -> "5990E510.2"
+		}
+	}
+
+	edge [color=yellow]
+	subgraph 0100 {
+		rank = same
+		label = "Level 3 (100)"
+		subgraph {
+			"5990E510.3" -> "5990E510.3"
+			"5990E510.3" -> "5990E510.3"
+		}
+		subgraph {
+			"37B1D295.3" -> "37B1D295.3"
+			"37B1D295.3" -> "37B1D295.3"
+		}
+	}
+
+	edge [color=blue]
+	subgraph 011 {
+		rank = same
+		label = "Level 2 (11)"
+		subgraph {
+			"2EC9A27C.2" -> "67CB3D64.2"
+			"2EC9A27C.2" -> "2CB4C23B.2"
+		}
+		subgraph {
+			"67CB3D64.2" -> "7B68EB5A.2"
+			"67CB3D64.2" -> "2EC9A27C.2"
+		}
+		subgraph {
+			"7B68EB5A.2" -> "152728B7.2"
+			"7B68EB5A.2" -> "67CB3D64.2"
+		}
+		subgraph {
+			"152728B7.2" -> "2CB4C23B.2"
+			"152728B7.2" -> "7B68EB5A.2"
+		}
+		subgraph {
+			"2CB4C23B.2" -> "2EC9A27C.2"
+			"2CB4C23B.2" -> "152728B7.2"
+		}
+	}
+
+	edge [color=red]
+	subgraph 0110 {
+		rank = same
+		label = "Level 3 (110)"
+		subgraph {
+			"2EC9A27C.3" -> "152728B7.3"
+			"2EC9A27C.3" -> "152728B7.3"
+		}
+		subgraph {
+			"152728B7.3" -> "2EC9A27C.3"
+			"152728B7.3" -> "2EC9A27C.3"
+		}
+	}
+
+	edge [color=green]
+	subgraph 01101 {
+		rank = same
+		label = "Level 4 (1101)"
+		subgraph {
+			"2EC9A27C.4" -> "2EC9A27C.4"
+			"2EC9A27C.4" -> "2EC9A27C.4"
+		}
+		subgraph {
+			"152728B7.4" -> "152728B7.4"
+			"152728B7.4" -> "152728B7.4"
+		}
+	}
+
+	edge [color=orange]
+	subgraph 0111 {
+		rank = same
+		label = "Level 3 (111)"
+		subgraph {
+			"67CB3D64.3" -> "7B68EB5A.3"
+			"67CB3D64.3" -> "2CB4C23B.3"
+		}
+		subgraph {
+			"7B68EB5A.3" -> "2CB4C23B.3"
+			"7B68EB5A.3" -> "67CB3D64.3"
+		}
+		subgraph {
+			"2CB4C23B.3" -> "67CB3D64.3"
+			"2CB4C23B.3" -> "7B68EB5A.3"
+		}
+	}
+
+	edge [color=cyan]
+	subgraph 01111 {
+		rank = same
+		label = "Level 4 (1111)"
+		subgraph {
+			"67CB3D64.4" -> "2CB4C23B.4"
+			"67CB3D64.4" -> "2CB4C23B.4"
+		}
+		subgraph {
+			"7B68EB5A.4" -> "7B68EB5A.4"
+			"7B68EB5A.4" -> "7B68EB5A.4"
+		}
+		subgraph {
+			"2CB4C23B.4" -> "67CB3D64.4"
+			"2CB4C23B.4" -> "67CB3D64.4"
+		}
+	}
+
+	edge [color=violet]
+	subgraph 011111 {
+		rank = same
+		label = "Level 5 (11111)"
+		subgraph {
+			"67CB3D64.5" -> "67CB3D64.5"
+			"67CB3D64.5" -> "67CB3D64.5"
+		}
+		subgraph {
+			"2CB4C23B.5" -> "2CB4C23B.5"
+			"2CB4C23B.5" -> "2CB4C23B.5"
+		}
+	}
+
+
+}

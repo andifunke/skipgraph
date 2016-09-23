@@ -200,4 +200,17 @@ public class ElementTable {
 	public int getNumberOfFreeSlots() {
 		return maxSize - size();
 	}
+
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(String.format("--- element table (start:%s, end:%s, size:%d, min-size:%d, max-size:%d)\n",
+				getRangeStart(), getRangeEnd() == null ? "inf" : getRangeEnd(), size(), getMinSize(), getMaxSize()));
+		sort();
+		for (int i = 0; i < size(); i++) {
+			String index = String.format("%03d ", i);
+			sb.append(index + get(i) + "\n");
+		}
+		return sb.toString();
+	}
+
 }

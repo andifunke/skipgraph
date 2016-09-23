@@ -53,4 +53,9 @@ public class ContactLevel {
 	}
 	*/
 
+	public String toString() {
+		return String.format("(next: %08X, prev: %08X)",
+				getNextContact().getNode().getId(), getPrevContact().getNode().getId());
+	}
+
 }

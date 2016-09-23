@@ -12,6 +12,7 @@ public class SkipGraph {
 	private Node skipGraphHead;
 	private int minTableSize = 10;
 	private int maxTableSize = 100;
+	private int counter = 1;
 
 
 	public SkipGraph() {
@@ -24,7 +25,13 @@ public class SkipGraph {
 		this.skipGraphHead = new Node(minTableSize, maxTableSize);
 	}
 
+	public static byte generatePrefix() {
+		return (byte)(Math.random() + 0.5);
+	}
 
+	public int getCounter() {
+		return counter++;
+	}
 	/*
 	 local administration methodes - only for distributed skip graph
 	  */
@@ -122,19 +129,41 @@ public class SkipGraph {
 		System.out.println(" " + elements + "\n");
 	}
 
-	public void printGraph() {
+	/*
+		debugging
+	 */
+	public void print() {
 		System.out.println(Main.headline("printing graph"));
-		int i = 0;
-		System.out.print(String.format("### %02d ", i));
-		skipGraphHead.printElementTable();
-		Node next = skipGraphHead.getContactTable().getNextNode();
-		while (next != null && next != skipGraphHead) {
-			i++;
-			System.out.print(String.format("### %02d ", i));
-			next.printElementTable();
-			next = next.getContactTable().getNextNode();
+		if (skipGraphHead != null) {
+			int i = 0;
+			Node next = skipGraphHead;
+			do {
+				i++;
+				System.out.println(String.format("> node #%02d (id %s)", i, next));
+				next.printContactTable();
+				next.printElementTable();
+				next = next.getContactTable().getNextNode();
+				if (next == null) {
+					System.out.println("link to next node missing - aborting...");
+					break;
+				}
+				System.out.println();
+			} while (next != skipGraphHead);
+		}
+		else {
+			System.out.println("SkipGraph is empty");
+		}
+	}
+
+	public void buildDotFile(String filename) {
+		if (skipGraphHead != null) {
+			DotFileBuilder dfb = new DotFileBuilder(skipGraphHead);
+			//dfb.print();
+			dfb.write(filename);
+		}
+		else {
+			System.out.println("SkipGraph is empty");
 		}
 
 	}
-
 }

@@ -10,6 +10,7 @@ public class Node {
 
 	private ElementTable elementTable;
 	private ContactTable contactTable;
+	private final int id;
 
 	/**
 	 * if a Node is constructed without a basic contactTable given it is assumed that this is
@@ -22,6 +23,7 @@ public class Node {
 		this.contactTable = new ContactTable(this);
 		Contact selfContact = thisContact();
 		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, (byte)0));
+		id = createID();
 	}
 
 	/**
@@ -40,12 +42,22 @@ public class Node {
 		this.contactTable = new ContactTable(this);
 		Contact selfContact = thisContact();
 		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, (byte)0));
+		id = createID();
 	}
 
 	public Node(ElementTable elementTable, ContactTable contactTable) {
 		this.elementTable = elementTable;
 		this.contactTable = contactTable;
 		contactTable.joinLevels();
+		id = createID();
+	}
+
+	private int createID() {
+		return (int) (Math.random() * (int) Math.pow(2, 32));
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	public ElementTable getElementTable() {
@@ -127,15 +139,17 @@ public class Node {
 
 	}
 
+	public String toString() {
+		return String.format("%08X", id);
+	}
+
 	public void printElementTable() {
-		System.out.println(String.format("### printing table (start:%s, end:%s, size:%d, min-size:%d, max-size:%d) ###",
-				elementTable.getRangeStart(), elementTable.getRangeEnd() == null ? "inf" :
-						elementTable.getRangeEnd(), elementTable.size(), elementTable.getMinSize(), elementTable.getMaxSize()));
-		elementTable.sort();
-		for (int i = 0; i < elementTable.size(); i++) {
-			String index = String.format("%03d ", i);
-			System.out.println(index + elementTable.get(i));
-		}
+		System.out.print(elementTable);
+	}
+
+	public void printContactTable() {
+		System.out.print(contactTable);
+
 	}
 
 	public Contact thisContact() {

@@ -1,9 +1,6 @@
 package de.skipgraph.operations;
 
-import de.skipgraph.Contact;
-import de.skipgraph.ContactLevel;
-import de.skipgraph.Element;
-import de.skipgraph.Node;
+import de.skipgraph.*;
 
 import java.util.List;
 
@@ -22,9 +19,15 @@ public class JoinLevelOperation extends ModifyContactsOperation {
 		this.joiningNode = joiningNode;
 	}
 
+	public String toString() {
+		return String.format("JoinLevelOperation. level %d. prefix %d. joiningNode %s", level, prefix, joiningNode);
+	}
+
 	@Override
 	public List<Element> execute(Node thisNode) {
 
+		System.out.println("node executing the joinLevelOperation: "+thisNode);
+		System.out.println(this);
 		//System.out.println("#aaa#aaa#"+thisNode.getContactTable().size());
 
 		if (thisNode.getContactTable().size() <= level) {
@@ -32,7 +35,7 @@ public class JoinLevelOperation extends ModifyContactsOperation {
 			//thisNode.getContactTable().joinLevels();
 			// TODO: deactivcate next 2 lines
 			//System.out.println("#as#dasd#"+thisNode.getContactTable().size());
-			byte newPrefix = (byte)(Math.random() + 0.5);
+			byte newPrefix = SkipGraph.generatePrefix();
 			Contact selfContact = thisNode.thisContact();
 			ContactLevel temporarySelfContactLevel = new ContactLevel(selfContact, selfContact, newPrefix);
 			thisNode.getContactTable().addLevel(temporarySelfContactLevel);
@@ -40,12 +43,12 @@ public class JoinLevelOperation extends ModifyContactsOperation {
 		}
 
 		// local variables
-		Node prevNode = thisNode.getContactTable().getLevel(level).getPrevContact().getNode();
-		Node nextNode = thisNode.getContactTable().getLevel(level).getNextContact().getNode();
+		Node nextNode = thisNode.getContactTable().getLevel(level-1).getNextContact().getNode();
 
 		// node has the same prefix on this level as joining node
 		if (thisNode.getContactTable().getLevel(level).getPrefix() == prefix) {
 
+			Node prevNode = thisNode.getContactTable().getLevel(level).getPrevContact().getNode();
 			// updates nextNode on previous node
 			ModifyContactsOperation setNextOnPrev = new SetContactOperation(level, prefix, NEXT, joiningNode);
 			prevNode.execute(setNextOnPrev);
