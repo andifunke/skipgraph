@@ -5,6 +5,7 @@ import de.skipgraph.operations.*;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.BooleanSupplier;
 
 
 public class SkipGraph {
@@ -13,29 +14,31 @@ public class SkipGraph {
 	private int minTableSize = 10;
 	private int maxTableSize = 100;
 	private int counter = 1;
+	private final int logFactor = 2;
 
 
 	public SkipGraph() {
-		this.skipGraphHead = new Node(minTableSize, maxTableSize);
 	}
 
 	public SkipGraph(int minTableSize, int maxTableSize) {
 		this.minTableSize = minTableSize;
 		this.maxTableSize = maxTableSize;
-		this.skipGraphHead = new Node(minTableSize, maxTableSize);
 	}
 
-	public static byte generatePrefix() {
-		return (byte)(Math.random() + 0.5);
+	public int generatePrefix() {
+		return Main.random.nextInt(logFactor);
 	}
 
 	public int getCounter() {
 		return counter++;
 	}
+
 	/*
 	 local administration methodes - only for distributed skip graph
 	  */
-	public void initialize() { }
+	public void init() {
+		this.skipGraphHead = new Node(minTableSize, maxTableSize);
+	}
 
 	public void join() { }
 
@@ -139,7 +142,7 @@ public class SkipGraph {
 			Node next = skipGraphHead;
 			do {
 				i++;
-				System.out.println(String.format("> node #%02d (id %s)", i, next));
+				System.out.println(String.format("> node #%d (id %s)", i, next));
 				next.printContactTable();
 				next.printElementTable();
 				next = next.getContactTable().getNextNode();
@@ -156,10 +159,18 @@ public class SkipGraph {
 	}
 
 	public void buildDotFile(String filename) {
+		buildDotFile(filename, false, false);
+	}
+
+	public void buildDotFile(String filename, Boolean plotAutomatically) {
+		buildDotFile(filename, plotAutomatically, false);
+	}
+
+	public void buildDotFile(String filename, Boolean plotAutomatically, Boolean useCluster) {
 		if (skipGraphHead != null) {
-			DotFileBuilder dfb = new DotFileBuilder(skipGraphHead);
+			DotFileBuilder dfb = new DotFileBuilder(skipGraphHead, plotAutomatically, useCluster);
 			//dfb.print();
-			dfb.write(filename);
+			dfb.writeFile(filename);
 		}
 		else {
 			System.out.println("SkipGraph is empty");

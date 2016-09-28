@@ -22,7 +22,7 @@ public class Node {
 		this.elementTable = new ElementTable(elementTableMinSize, elementTableMaxSize);
 		this.contactTable = new ContactTable(this);
 		Contact selfContact = thisContact();
-		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, (byte)0));
+		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, 1));
 		id = createID();
 	}
 
@@ -41,7 +41,7 @@ public class Node {
 		this.elementTable = elementTable;
 		this.contactTable = new ContactTable(this);
 		Contact selfContact = thisContact();
-		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, (byte)0));
+		this.contactTable.addLevel(new ContactLevel(selfContact, selfContact, 1));
 		id = createID();
 	}
 
@@ -53,7 +53,7 @@ public class Node {
 	}
 
 	private int createID() {
-		return (int) (Math.random() * (int) Math.pow(2, 32));
+		return Main.skipGraph.getCounter();
 	}
 
 	public int getId() {
@@ -123,11 +123,11 @@ public class Node {
 			Node newNode = new Node(newElementTable);
 			// build new basic contactTable for new node
 			ContactTable newContactTable = new ContactTable(newNode);
-			newContactTable.addLevel(new ContactLevel(thisContact(), nextContact, (byte)0));
+			newContactTable.addLevel(new ContactLevel(thisContact(), nextContact, 1));
 			newNode.setContactTable(newContactTable);
 
 			// inform NextNode of new PrevNode
-			ModifyContactsOperation setPrevOnNext = new SetContactOperation((short)0, (byte)0, PREV, newNode);
+			ModifyContactsOperation setPrevOnNext = new SetContactOperation(0, 1, PREV, newNode);
 			nextContact.getNode().execute(setPrevOnNext);
 
 			// update own nextContact
@@ -140,7 +140,7 @@ public class Node {
 	}
 
 	public String toString() {
-		return String.format("%08X", id);
+		return String.format("%d", id);
 	}
 
 	public void printElementTable() {
@@ -149,7 +149,6 @@ public class Node {
 
 	public void printContactTable() {
 		System.out.print(contactTable);
-
 	}
 
 	public Contact thisContact() {

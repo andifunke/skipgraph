@@ -1,0 +1,95 @@
+strict
+digraph SkipGraph {
+
+	# vertical
+	edge [dir=none style=dashed]
+	subgraph {
+		"1" -> "1.0" -> "1.1"
+		}
+	subgraph {
+		"2" -> "2.0" -> "2.1"
+		}
+
+	# horizontal
+	edge [dir=forward, style=solid]
+	subgraph cluster_content {
+		rank = same
+		"1" [shape=box, label=
+			<
+				<B>ID:</B> 1<BR ALIGN="LEFT"/>
+				responsible for <B>[0, 100)</B><BR ALIGN="LEFT"/>
+				000 (0.5, CPU, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				001 (1, CPU, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				002 (2, CPU, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				003 (2, CPU, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				004 (2.7, BW, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				005 (4, BW, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				006 (5, STOR, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				007 (8, MEM, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				008 (10, BW, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				009 (10.1234, MEM, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				010 (16, STOR, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				011 (20, CPU, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				012 (20, BW, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				013 (40, BW, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				014 (80, MEM, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				015 (100, MEM, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+			<B>size:</B>16, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"2" [shape=box, label=
+			<
+				<B>ID:</B> 2<BR ALIGN="LEFT"/>
+				responsible for <B>[100, inf)</B><BR ALIGN="LEFT"/>
+				000 (160, STOR, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				001 (160, STOR, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				002 (200, MEM, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				003 (223, STOR, 0.0.38.17:5245)<BR ALIGN="LEFT"/>
+				004 (1000, STOR, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				005 (1053, STOR, 0.0.17.139:9761)<BR ALIGN="LEFT"/>
+				006 (1260, CPU, 0.0.13.175:7882)<BR ALIGN="LEFT"/>
+				007 (2000, STOR, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				008 (2387, CPU, 0.0.6.66:5862)<BR ALIGN="LEFT"/>
+				009 (2854, STOR, 0.0.4.53:2677)<BR ALIGN="LEFT"/>
+				010 (4262, BW, 0.0.4.71:8844)<BR ALIGN="LEFT"/>
+				011 (4888, BW, 0.0.17.172:1947)<BR ALIGN="LEFT"/>
+				012 (5000, CPU, 0.0.0.6:987)<BR ALIGN="LEFT"/>
+				013 (5948, STOR, 0.0.31.93:6447)<BR ALIGN="LEFT"/>
+				014 (7875, MEM, 0.0.28.73:7320)<BR ALIGN="LEFT"/>
+			<B>size:</B>15, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+	}
+
+	edge [color=red]
+	subgraph 1 {
+		rank = same
+		label = "Level 0"
+		subgraph {
+			"1.0" -> "2.0"
+			"1.0" -> "2.0"
+		}
+		subgraph {
+			"2.0" -> "1.0"
+			"2.0" -> "1.0"
+		}
+	}
+
+	edge [color=green]
+	subgraph 10 {
+		rank = same
+		label = "Level 1 (0)"
+		subgraph {
+			"1.1" -> "1.1"
+			"1.1" -> "1.1"
+		}
+	}
+
+	edge [color=orange]
+	subgraph 11 {
+		rank = same
+		label = "Level 1 (1)"
+		subgraph {
+			"2.1" -> "2.1"
+			"2.1" -> "2.1"
+		}
+	}
+
+
+}

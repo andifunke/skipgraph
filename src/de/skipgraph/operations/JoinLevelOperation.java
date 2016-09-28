@@ -10,10 +10,10 @@ import static de.skipgraph.operations.ModifyContactsOperation.ContactType.PREV;
 public class JoinLevelOperation extends ModifyContactsOperation {
 
 	private int level;
-	private byte prefix;
+	private int prefix;
 	private Node joiningNode;
 
-	public JoinLevelOperation(int level, byte prefix, Node joiningNode) {
+	public JoinLevelOperation(int level, int prefix, Node joiningNode) {
 		this.level = level;
 		this.prefix = prefix;
 		this.joiningNode = joiningNode;
@@ -35,10 +35,33 @@ public class JoinLevelOperation extends ModifyContactsOperation {
 			//thisNode.getContactTable().joinLevels();
 			// TODO: deactivcate next 2 lines
 			//System.out.println("#as#dasd#"+thisNode.getContactTable().size());
-			byte newPrefix = SkipGraph.generatePrefix();
-			Contact selfContact = thisNode.thisContact();
-			ContactLevel temporarySelfContactLevel = new ContactLevel(selfContact, selfContact, newPrefix);
-			thisNode.getContactTable().addLevel(temporarySelfContactLevel);
+
+			// this optimization ensures that no redundant levels are created
+			Node lastJoiningNode = thisNode.getContactTable().getLastJoiningNode();
+			int newPrefix;
+			if (lastJoiningNode != null && lastJoiningNode != joiningNode) {
+				newPrefix = Main.skipGraph.generatePrefix();
+			}
+			else {
+				newPrefix = (prefix-1)*(-1);
+			}
+
+			// if prefixes are identical join on level
+			if (newPrefix == prefix) {
+				Contact contact = joiningNode.thisContact();
+				ContactLevel newContactLevel = new ContactLevel(contact, contact, newPrefix);
+				thisNode.getContactTable().addLevel(newContactLevel);
+				// updates nextNode on joining node
+				ModifyContactsOperation setPrevOnJoining = new SetContactOperation(level, prefix, PREV, thisNode);
+				ModifyContactsOperation setNextOnJoining = new SetContactOperation(level, prefix, NEXT, thisNode);
+				joiningNode.execute(setPrevOnJoining);
+				joiningNode.execute(setNextOnJoining);
+			}
+			else {
+				Contact contact = thisNode.thisContact();
+				ContactLevel newContactLevel = new ContactLevel(contact, contact, newPrefix);
+				thisNode.getContactTable().addLevel(newContactLevel);
+			}
 			return null;
 		}
 

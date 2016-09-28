@@ -1,0 +1,621 @@
+strict
+digraph SkipGraph {
+
+	# vertical
+	edge [dir=none style=dashed]
+	subgraph {
+		"1" -> "1.0" -> "1.1" -> "1.2" -> "1.3"
+		}
+	subgraph {
+		"2" -> "2.0" -> "2.1" -> "2.2"
+		}
+	subgraph {
+		"9" -> "9.0" -> "9.1" -> "9.2" -> "9.3" -> "9.4"
+		}
+	subgraph {
+		"5" -> "5.0" -> "5.1" -> "5.2" -> "5.3"
+		}
+	subgraph {
+		"11" -> "11.0"
+		}
+	subgraph {
+		"3" -> "3.0" -> "3.1" -> "3.2" -> "3.3"
+		}
+	subgraph {
+		"8" -> "8.0" -> "8.1" -> "8.2" -> "8.3"
+		}
+	subgraph {
+		"7" -> "7.0" -> "7.1" -> "7.2" -> "7.3" -> "7.4"
+		}
+	subgraph {
+		"4" -> "4.0" -> "4.1" -> "4.2" -> "4.3" -> "4.4"
+		}
+	subgraph {
+		"6" -> "6.0" -> "6.1" -> "6.2" -> "6.3" -> "6.4" -> "6.5"
+		}
+	subgraph {
+		"10" -> "10.0" -> "10.1" -> "10.2" -> "10.3" -> "10.4" -> "10.5"
+		}
+
+	# horizontal
+	edge [dir=forward, style=solid]
+	subgraph cluster_content {
+		rank = same
+		"1" [shape=box, label=
+			<
+				<B>ID:</B> 1<BR ALIGN="LEFT"/>
+				responsible for <B>[0, 100)</B><BR ALIGN="LEFT"/>
+				000 (0.5, CPU, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				001 (1, CPU, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				002 (2, CPU, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				003 (2, CPU, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				004 (2.7, BW, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				005 (4, BW, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				006 (5, STOR, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				007 (8, MEM, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				008 (10, BW, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				009 (10.1234, MEM, 0.0.0.5:987)<BR ALIGN="LEFT"/>
+				010 (16, STOR, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				011 (20, CPU, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				012 (20, BW, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				013 (40, BW, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				014 (40, CPU, 0.0.18.114:4671)<BR ALIGN="LEFT"/>
+				015 (51, STOR, 0.0.19.176:9974)<BR ALIGN="LEFT"/>
+				016 (80, MEM, 0.0.0.2:4560)<BR ALIGN="LEFT"/>
+				017 (100, MEM, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+			<B>size:</B>18, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"2" [shape=box, label=
+			<
+				<B>ID:</B> 2<BR ALIGN="LEFT"/>
+				responsible for <B>[100, 788)</B><BR ALIGN="LEFT"/>
+				000 (124, STOR, 0.0.21.95:1335)<BR ALIGN="LEFT"/>
+				001 (137, MEM, 0.0.19.212:5466)<BR ALIGN="LEFT"/>
+				002 (154, BW, 0.0.32.152:1245)<BR ALIGN="LEFT"/>
+				003 (160, STOR, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				004 (160, STOR, 0.0.0.1:1230)<BR ALIGN="LEFT"/>
+				005 (200, MEM, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				006 (223, STOR, 0.0.38.17:5245)<BR ALIGN="LEFT"/>
+				007 (346, BW, 0.0.17.111:2575)<BR ALIGN="LEFT"/>
+				008 (401, BW, 0.0.24.59:9163)<BR ALIGN="LEFT"/>
+				009 (460, CPU, 0.0.14.194:3484)<BR ALIGN="LEFT"/>
+				010 (479, STOR, 0.0.21.96:2946)<BR ALIGN="LEFT"/>
+				011 (552, BW, 0.0.9.178:3018)<BR ALIGN="LEFT"/>
+				012 (575, CPU, 0.0.22.163:3536)<BR ALIGN="LEFT"/>
+				013 (609, CPU, 0.0.0.133:3158)<BR ALIGN="LEFT"/>
+				014 (611, BW, 0.0.5.60:6900)<BR ALIGN="LEFT"/>
+				015 (641, MEM, 0.0.32.98:151)<BR ALIGN="LEFT"/>
+				016 (645, BW, 0.0.33.60:3029)<BR ALIGN="LEFT"/>
+				017 (702, MEM, 0.0.11.184:4126)<BR ALIGN="LEFT"/>
+				018 (788, MEM, 0.0.0.105:5258)<BR ALIGN="LEFT"/>
+			<B>size:</B>19, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"9" [shape=box, label=
+			<
+				<B>ID:</B> 9<BR ALIGN="LEFT"/>
+				responsible for <B>[788, 1565)</B><BR ALIGN="LEFT"/>
+				000 (850, STOR, 0.0.21.59:8100)<BR ALIGN="LEFT"/>
+				001 (863, CPU, 0.0.20.244:389)<BR ALIGN="LEFT"/>
+				002 (971, CPU, 0.0.3.25:3056)<BR ALIGN="LEFT"/>
+				003 (974, STOR, 0.0.24.11:5644)<BR ALIGN="LEFT"/>
+				004 (1000, STOR, 0.0.0.3:7890)<BR ALIGN="LEFT"/>
+				005 (1053, STOR, 0.0.17.139:9761)<BR ALIGN="LEFT"/>
+				006 (1118, BW, 0.0.10.178:8072)<BR ALIGN="LEFT"/>
+				007 (1181, CPU, 0.0.21.255:2765)<BR ALIGN="LEFT"/>
+				008 (1210, BW, 0.0.21.93:1953)<BR ALIGN="LEFT"/>
+				009 (1222, MEM, 0.0.17.253:2371)<BR ALIGN="LEFT"/>
+				010 (1260, CPU, 0.0.13.175:7882)<BR ALIGN="LEFT"/>
+				011 (1441, BW, 0.0.1.124:5786)<BR ALIGN="LEFT"/>
+				012 (1462, CPU, 0.0.35.48:4141)<BR ALIGN="LEFT"/>
+				013 (1490, CPU, 0.0.21.199:610)<BR ALIGN="LEFT"/>
+				014 (1526, CPU, 0.0.2.102:3016)<BR ALIGN="LEFT"/>
+				015 (1565, CPU, 0.0.32.127:653)<BR ALIGN="LEFT"/>
+			<B>size:</B>16, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"5" [shape=box, label=
+			<
+				<B>ID:</B> 5<BR ALIGN="LEFT"/>
+				responsible for <B>[1565, 2719)</B><BR ALIGN="LEFT"/>
+				000 (1566, STOR, 0.0.11.163:4500)<BR ALIGN="LEFT"/>
+				001 (1638, CPU, 0.0.11.3:1751)<BR ALIGN="LEFT"/>
+				002 (2000, STOR, 0.0.0.4:987)<BR ALIGN="LEFT"/>
+				003 (2021, MEM, 0.0.18.189:7557)<BR ALIGN="LEFT"/>
+				004 (2062, MEM, 0.0.12.247:877)<BR ALIGN="LEFT"/>
+				005 (2169, CPU, 0.0.34.187:8415)<BR ALIGN="LEFT"/>
+				006 (2245, MEM, 0.0.8.93:7710)<BR ALIGN="LEFT"/>
+				007 (2286, STOR, 0.0.18.5:6020)<BR ALIGN="LEFT"/>
+				008 (2375, MEM, 0.0.17.203:5730)<BR ALIGN="LEFT"/>
+				009 (2387, CPU, 0.0.6.66:5862)<BR ALIGN="LEFT"/>
+				010 (2516, BW, 0.0.8.110:3445)<BR ALIGN="LEFT"/>
+				011 (2618, CPU, 0.0.30.31:6160)<BR ALIGN="LEFT"/>
+				012 (2662, BW, 0.0.11.246:2377)<BR ALIGN="LEFT"/>
+				013 (2671, STOR, 0.0.34.101:8032)<BR ALIGN="LEFT"/>
+				014 (2693, MEM, 0.0.21.146:2356)<BR ALIGN="LEFT"/>
+				015 (2719, STOR, 0.0.23.108:2466)<BR ALIGN="LEFT"/>
+			<B>size:</B>16, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"11" [shape=box, label=
+			<
+				<B>ID:</B> 11<BR ALIGN="LEFT"/>
+				responsible for <B>[2719, 3514)</B><BR ALIGN="LEFT"/>
+				000 (2854, STOR, 0.0.4.53:2677)<BR ALIGN="LEFT"/>
+				001 (2916, MEM, 0.0.5.254:3983)<BR ALIGN="LEFT"/>
+				002 (2943, MEM, 0.0.38.144:6857)<BR ALIGN="LEFT"/>
+				003 (2945, BW, 0.0.23.17:9113)<BR ALIGN="LEFT"/>
+				004 (2981, STOR, 0.0.14.186:5717)<BR ALIGN="LEFT"/>
+				005 (3067, MEM, 0.0.9.27:5297)<BR ALIGN="LEFT"/>
+				006 (3102, STOR, 0.0.14.201:6826)<BR ALIGN="LEFT"/>
+				007 (3130, BW, 0.0.21.131:5201)<BR ALIGN="LEFT"/>
+				008 (3213, MEM, 0.0.1.150:8706)<BR ALIGN="LEFT"/>
+				009 (3241, MEM, 0.0.22.72:158)<BR ALIGN="LEFT"/>
+				010 (3357, MEM, 0.0.36.142:2478)<BR ALIGN="LEFT"/>
+				011 (3357, MEM, 0.0.27.124:3815)<BR ALIGN="LEFT"/>
+				012 (3407, STOR, 0.0.6.66:2933)<BR ALIGN="LEFT"/>
+				013 (3450, BW, 0.0.25.28:753)<BR ALIGN="LEFT"/>
+				014 (3514, CPU, 0.0.30.236:723)<BR ALIGN="LEFT"/>
+			<B>size:</B>15, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"3" [shape=box, label=
+			<
+				<B>ID:</B> 3<BR ALIGN="LEFT"/>
+				responsible for <B>[3514, 4004)</B><BR ALIGN="LEFT"/>
+				000 (3539, CPU, 0.0.2.32:9843)<BR ALIGN="LEFT"/>
+				001 (3545, BW, 0.0.22.99:4987)<BR ALIGN="LEFT"/>
+				002 (3564, MEM, 0.0.26.52:1378)<BR ALIGN="LEFT"/>
+				003 (3581, STOR, 0.0.21.148:3196)<BR ALIGN="LEFT"/>
+				004 (3613, STOR, 0.0.36.196:6822)<BR ALIGN="LEFT"/>
+				005 (3622, MEM, 0.0.25.8:1559)<BR ALIGN="LEFT"/>
+				006 (3666, BW, 0.0.31.140:5811)<BR ALIGN="LEFT"/>
+				007 (3691, STOR, 0.0.8.26:9336)<BR ALIGN="LEFT"/>
+				008 (3729, STOR, 0.0.27.158:1117)<BR ALIGN="LEFT"/>
+				009 (3773, MEM, 0.0.19.253:1669)<BR ALIGN="LEFT"/>
+				010 (3782, BW, 0.0.29.45:1548)<BR ALIGN="LEFT"/>
+				011 (3791, BW, 0.0.2.190:3081)<BR ALIGN="LEFT"/>
+				012 (3811, CPU, 0.0.12.182:2181)<BR ALIGN="LEFT"/>
+				013 (3862, MEM, 0.0.5.14:6859)<BR ALIGN="LEFT"/>
+				014 (3871, STOR, 0.0.23.118:3676)<BR ALIGN="LEFT"/>
+				015 (3881, BW, 0.0.12.157:4210)<BR ALIGN="LEFT"/>
+				016 (3922, CPU, 0.0.21.71:389)<BR ALIGN="LEFT"/>
+				017 (4004, STOR, 0.0.23.96:2762)<BR ALIGN="LEFT"/>
+			<B>size:</B>18, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"8" [shape=box, label=
+			<
+				<B>ID:</B> 8<BR ALIGN="LEFT"/>
+				responsible for <B>[4004, 5000)</B><BR ALIGN="LEFT"/>
+				000 (4076, CPU, 0.0.6.44:9893)<BR ALIGN="LEFT"/>
+				001 (4248, BW, 0.0.17.125:1720)<BR ALIGN="LEFT"/>
+				002 (4262, BW, 0.0.4.71:8844)<BR ALIGN="LEFT"/>
+				003 (4346, CPU, 0.0.7.146:1594)<BR ALIGN="LEFT"/>
+				004 (4355, MEM, 0.0.3.149:8077)<BR ALIGN="LEFT"/>
+				005 (4362, CPU, 0.0.37.182:7494)<BR ALIGN="LEFT"/>
+				006 (4392, BW, 0.0.6.149:2764)<BR ALIGN="LEFT"/>
+				007 (4428, MEM, 0.0.20.48:1999)<BR ALIGN="LEFT"/>
+				008 (4452, STOR, 0.0.8.163:1780)<BR ALIGN="LEFT"/>
+				009 (4551, MEM, 0.0.26.233:4383)<BR ALIGN="LEFT"/>
+				010 (4581, STOR, 0.0.17.36:5418)<BR ALIGN="LEFT"/>
+				011 (4604, STOR, 0.0.7.53:5100)<BR ALIGN="LEFT"/>
+				012 (4643, CPU, 0.0.8.8:4294)<BR ALIGN="LEFT"/>
+				013 (4720, CPU, 0.0.16.169:5959)<BR ALIGN="LEFT"/>
+				014 (4764, MEM, 0.0.24.171:2938)<BR ALIGN="LEFT"/>
+				015 (4869, STOR, 0.0.25.98:6497)<BR ALIGN="LEFT"/>
+				016 (4885, CPU, 0.0.22.247:8773)<BR ALIGN="LEFT"/>
+				017 (4888, BW, 0.0.17.172:1947)<BR ALIGN="LEFT"/>
+				018 (4916, MEM, 0.0.34.119:6562)<BR ALIGN="LEFT"/>
+				019 (4957, CPU, 0.0.16.211:8725)<BR ALIGN="LEFT"/>
+				020 (4983, STOR, 0.0.0.206:1165)<BR ALIGN="LEFT"/>
+				021 (5000, CPU, 0.0.0.6:987)<BR ALIGN="LEFT"/>
+			<B>size:</B>22, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"7" [shape=box, label=
+			<
+				<B>ID:</B> 7<BR ALIGN="LEFT"/>
+				responsible for <B>[5000, 6517)</B><BR ALIGN="LEFT"/>
+				000 (5036, CPU, 0.0.32.62:7536)<BR ALIGN="LEFT"/>
+				001 (5066, STOR, 0.0.3.36:2565)<BR ALIGN="LEFT"/>
+				002 (5083, CPU, 0.0.12.189:1477)<BR ALIGN="LEFT"/>
+				003 (5123, CPU, 0.0.33.248:4528)<BR ALIGN="LEFT"/>
+				004 (5175, BW, 0.0.2.192:7229)<BR ALIGN="LEFT"/>
+				005 (5246, MEM, 0.0.14.187:2457)<BR ALIGN="LEFT"/>
+				006 (5253, MEM, 0.0.37.51:6292)<BR ALIGN="LEFT"/>
+				007 (5366, BW, 0.0.30.30:6246)<BR ALIGN="LEFT"/>
+				008 (5367, MEM, 0.0.16.11:2534)<BR ALIGN="LEFT"/>
+				009 (5375, MEM, 0.0.33.175:7335)<BR ALIGN="LEFT"/>
+				010 (5377, BW, 0.0.5.104:6687)<BR ALIGN="LEFT"/>
+				011 (5389, BW, 0.0.25.178:8256)<BR ALIGN="LEFT"/>
+				012 (5541, BW, 0.0.27.74:4593)<BR ALIGN="LEFT"/>
+				013 (5555, BW, 0.0.20.241:8062)<BR ALIGN="LEFT"/>
+				014 (5563, MEM, 0.0.2.77:5712)<BR ALIGN="LEFT"/>
+				015 (5653, BW, 0.0.31.2:2635)<BR ALIGN="LEFT"/>
+				016 (5691, STOR, 0.0.31.17:5602)<BR ALIGN="LEFT"/>
+				017 (5725, BW, 0.0.23.35:3677)<BR ALIGN="LEFT"/>
+				018 (5941, MEM, 0.0.23.179:7029)<BR ALIGN="LEFT"/>
+				019 (5948, STOR, 0.0.31.93:6447)<BR ALIGN="LEFT"/>
+				020 (6038, BW, 0.0.10.52:4259)<BR ALIGN="LEFT"/>
+				021 (6156, BW, 0.0.4.41:9268)<BR ALIGN="LEFT"/>
+				022 (6230, MEM, 0.0.38.130:4706)<BR ALIGN="LEFT"/>
+				023 (6241, CPU, 0.0.28.55:2380)<BR ALIGN="LEFT"/>
+				024 (6279, STOR, 0.0.5.243:6868)<BR ALIGN="LEFT"/>
+				025 (6363, STOR, 0.0.21.161:8849)<BR ALIGN="LEFT"/>
+				026 (6417, MEM, 0.0.15.196:5086)<BR ALIGN="LEFT"/>
+				027 (6484, BW, 0.0.23.181:1268)<BR ALIGN="LEFT"/>
+				028 (6501, BW, 0.0.22.24:5967)<BR ALIGN="LEFT"/>
+				029 (6517, STOR, 0.0.13.123:1718)<BR ALIGN="LEFT"/>
+			<B>size:</B>30, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"4" [shape=box, label=
+			<
+				<B>ID:</B> 4<BR ALIGN="LEFT"/>
+				responsible for <B>[6517, 8373)</B><BR ALIGN="LEFT"/>
+				000 (6534, MEM, 0.0.6.194:1865)<BR ALIGN="LEFT"/>
+				001 (6545, CPU, 0.0.36.240:5794)<BR ALIGN="LEFT"/>
+				002 (6639, STOR, 0.0.36.1:9351)<BR ALIGN="LEFT"/>
+				003 (6661, MEM, 0.0.8.103:2731)<BR ALIGN="LEFT"/>
+				004 (6751, STOR, 0.0.4.193:7037)<BR ALIGN="LEFT"/>
+				005 (6778, CPU, 0.0.30.236:7871)<BR ALIGN="LEFT"/>
+				006 (6782, MEM, 0.0.3.232:3158)<BR ALIGN="LEFT"/>
+				007 (6834, STOR, 0.0.2.222:5778)<BR ALIGN="LEFT"/>
+				008 (6876, STOR, 0.0.28.53:9748)<BR ALIGN="LEFT"/>
+				009 (6911, BW, 0.0.10.111:6223)<BR ALIGN="LEFT"/>
+				010 (6935, STOR, 0.0.38.166:1416)<BR ALIGN="LEFT"/>
+				011 (7128, STOR, 0.0.6.53:22)<BR ALIGN="LEFT"/>
+				012 (7152, STOR, 0.0.14.205:243)<BR ALIGN="LEFT"/>
+				013 (7460, MEM, 0.0.20.197:2350)<BR ALIGN="LEFT"/>
+				014 (7477, STOR, 0.0.29.187:1290)<BR ALIGN="LEFT"/>
+				015 (7519, CPU, 0.0.17.201:9820)<BR ALIGN="LEFT"/>
+				016 (7762, BW, 0.0.33.181:6287)<BR ALIGN="LEFT"/>
+				017 (7818, CPU, 0.0.4.146:9188)<BR ALIGN="LEFT"/>
+				018 (7875, MEM, 0.0.28.73:7320)<BR ALIGN="LEFT"/>
+				019 (7910, MEM, 0.0.26.14:307)<BR ALIGN="LEFT"/>
+				020 (7958, STOR, 0.0.25.40:1075)<BR ALIGN="LEFT"/>
+				021 (7998, CPU, 0.0.4.54:1553)<BR ALIGN="LEFT"/>
+				022 (8020, CPU, 0.0.15.223:1727)<BR ALIGN="LEFT"/>
+				023 (8067, BW, 0.0.1.77:5300)<BR ALIGN="LEFT"/>
+				024 (8145, BW, 0.0.9.143:1070)<BR ALIGN="LEFT"/>
+				025 (8227, CPU, 0.0.15.43:3156)<BR ALIGN="LEFT"/>
+				026 (8290, STOR, 0.0.33.112:5916)<BR ALIGN="LEFT"/>
+				027 (8308, BW, 0.0.31.97:7554)<BR ALIGN="LEFT"/>
+				028 (8324, STOR, 0.0.23.36:389)<BR ALIGN="LEFT"/>
+				029 (8373, MEM, 0.0.11.56:3315)<BR ALIGN="LEFT"/>
+			<B>size:</B>30, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"6" [shape=box, label=
+			<
+				<B>ID:</B> 6<BR ALIGN="LEFT"/>
+				responsible for <B>[8373, 9098)</B><BR ALIGN="LEFT"/>
+				000 (8378, CPU, 0.0.37.85:5593)<BR ALIGN="LEFT"/>
+				001 (8380, CPU, 0.0.30.193:7906)<BR ALIGN="LEFT"/>
+				002 (8481, MEM, 0.0.15.138:2901)<BR ALIGN="LEFT"/>
+				003 (8537, CPU, 0.0.25.77:4034)<BR ALIGN="LEFT"/>
+				004 (8540, BW, 0.0.36.181:9772)<BR ALIGN="LEFT"/>
+				005 (8551, CPU, 0.0.26.70:2580)<BR ALIGN="LEFT"/>
+				006 (8572, CPU, 0.0.13.24:555)<BR ALIGN="LEFT"/>
+				007 (8662, BW, 0.0.16.39:5220)<BR ALIGN="LEFT"/>
+				008 (8674, CPU, 0.0.15.35:9490)<BR ALIGN="LEFT"/>
+				009 (8674, CPU, 0.0.5.50:2017)<BR ALIGN="LEFT"/>
+				010 (8879, CPU, 0.0.27.99:4667)<BR ALIGN="LEFT"/>
+				011 (8906, STOR, 0.0.37.31:3070)<BR ALIGN="LEFT"/>
+				012 (8935, STOR, 0.0.19.232:9126)<BR ALIGN="LEFT"/>
+				013 (9006, BW, 0.0.31.162:2232)<BR ALIGN="LEFT"/>
+				014 (9075, BW, 0.0.37.147:7180)<BR ALIGN="LEFT"/>
+				015 (9082, STOR, 0.0.1.51:7008)<BR ALIGN="LEFT"/>
+				016 (9098, STOR, 0.0.19.47:2615)<BR ALIGN="LEFT"/>
+			<B>size:</B>17, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+		"10" [shape=box, label=
+			<
+				<B>ID:</B> 10<BR ALIGN="LEFT"/>
+				responsible for <B>[9098, inf)</B><BR ALIGN="LEFT"/>
+				000 (9130, CPU, 0.0.26.221:9093)<BR ALIGN="LEFT"/>
+				001 (9275, CPU, 0.0.6.97:1790)<BR ALIGN="LEFT"/>
+				002 (9315, BW, 0.0.30.6:179)<BR ALIGN="LEFT"/>
+				003 (9437, CPU, 0.0.10.182:6056)<BR ALIGN="LEFT"/>
+				004 (9448, STOR, 0.0.10.209:8088)<BR ALIGN="LEFT"/>
+				005 (9476, BW, 0.0.26.242:7349)<BR ALIGN="LEFT"/>
+				006 (9526, BW, 0.0.25.252:1384)<BR ALIGN="LEFT"/>
+				007 (9624, CPU, 0.0.1.115:6544)<BR ALIGN="LEFT"/>
+				008 (9636, MEM, 0.0.10.185:9704)<BR ALIGN="LEFT"/>
+				009 (9646, STOR, 0.0.28.39:1616)<BR ALIGN="LEFT"/>
+				010 (9737, CPU, 0.0.20.23:9747)<BR ALIGN="LEFT"/>
+				011 (9764, MEM, 0.0.9.34:8596)<BR ALIGN="LEFT"/>
+				012 (9872, CPU, 0.0.36.254:4443)<BR ALIGN="LEFT"/>
+				013 (9907, BW, 0.0.34.100:6106)<BR ALIGN="LEFT"/>
+				014 (9936, BW, 0.0.3.144:6903)<BR ALIGN="LEFT"/>
+				015 (9963, BW, 0.0.6.194:6725)<BR ALIGN="LEFT"/>
+			<B>size:</B>16, <B>min-size:</B>5, <B>max-size:</B>30<BR ALIGN="LEFT"/>			>]
+	}
+
+	edge [color=red]
+	subgraph cluster_1 {
+		rank = same
+		label = "Level 0"
+		subgraph {
+			"1.0" -> "2.0"
+			"1.0" -> "10.0"
+		}
+		subgraph {
+			"2.0" -> "9.0"
+			"2.0" -> "1.0"
+		}
+		subgraph {
+			"9.0" -> "5.0"
+			"9.0" -> "2.0"
+		}
+		subgraph {
+			"5.0" -> "11.0"
+			"5.0" -> "9.0"
+		}
+		subgraph {
+			"11.0" -> "3.0"
+			"11.0" -> "5.0"
+		}
+		subgraph {
+			"3.0" -> "8.0"
+			"3.0" -> "11.0"
+		}
+		subgraph {
+			"8.0" -> "7.0"
+			"8.0" -> "3.0"
+		}
+		subgraph {
+			"7.0" -> "4.0"
+			"7.0" -> "8.0"
+		}
+		subgraph {
+			"4.0" -> "6.0"
+			"4.0" -> "7.0"
+		}
+		subgraph {
+			"6.0" -> "10.0"
+			"6.0" -> "4.0"
+		}
+		subgraph {
+			"10.0" -> "1.0"
+			"10.0" -> "6.0"
+		}
+	}
+
+	edge [color=green]
+	subgraph cluster_10 {
+		rank = same
+		label = "Level 1 (0)"
+		subgraph {
+			"1.1" -> "9.1"
+			"1.1" -> "10.1"
+		}
+		subgraph {
+			"9.1" -> "3.1"
+			"9.1" -> "1.1"
+		}
+		subgraph {
+			"3.1" -> "8.1"
+			"3.1" -> "9.1"
+		}
+		subgraph {
+			"8.1" -> "6.1"
+			"8.1" -> "3.1"
+		}
+		subgraph {
+			"6.1" -> "10.1"
+			"6.1" -> "8.1"
+		}
+		subgraph {
+			"10.1" -> "1.1"
+			"10.1" -> "6.1"
+		}
+	}
+
+	edge [color=cyan]
+	subgraph cluster_100 {
+		rank = same
+		label = "Level 2 (00)"
+		subgraph {
+			"1.2" -> "9.2"
+			"1.2" -> "10.2"
+		}
+		subgraph {
+			"9.2" -> "6.2"
+			"9.2" -> "1.2"
+		}
+		subgraph {
+			"6.2" -> "10.2"
+			"6.2" -> "9.2"
+		}
+		subgraph {
+			"10.2" -> "1.2"
+			"10.2" -> "6.2"
+		}
+	}
+
+	edge [color=aquamarine]
+	subgraph cluster_1000 {
+		rank = same
+		label = "Level 3 (000)"
+		subgraph {
+			"9.3" -> "6.3"
+			"9.3" -> "10.3"
+		}
+		subgraph {
+			"6.3" -> "10.3"
+			"6.3" -> "9.3"
+		}
+		subgraph {
+			"10.3" -> "9.3"
+			"10.3" -> "6.3"
+		}
+	}
+
+	edge [color=cornsilk4]
+	subgraph cluster_10000 {
+		rank = same
+		label = "Level 4 (0000)"
+		subgraph {
+			"9.4" -> "9.4"
+			"9.4" -> "9.4"
+		}
+	}
+
+	edge [color=crimson]
+	subgraph cluster_10001 {
+		rank = same
+		label = "Level 4 (0001)"
+		subgraph {
+			"6.4" -> "10.4"
+			"6.4" -> "10.4"
+		}
+		subgraph {
+			"10.4" -> "6.4"
+			"10.4" -> "6.4"
+		}
+	}
+
+	edge [color=burlywood]
+	subgraph cluster_100010 {
+		rank = same
+		label = "Level 5 (00010)"
+		subgraph {
+			"10.5" -> "10.5"
+			"10.5" -> "10.5"
+		}
+	}
+
+	edge [color=cadetblue]
+	subgraph cluster_100011 {
+		rank = same
+		label = "Level 5 (00011)"
+		subgraph {
+			"6.5" -> "6.5"
+			"6.5" -> "6.5"
+		}
+	}
+
+	edge [color=darkslategray]
+	subgraph cluster_1001 {
+		rank = same
+		label = "Level 3 (001)"
+		subgraph {
+			"1.3" -> "1.3"
+			"1.3" -> "1.3"
+		}
+	}
+
+	edge [color=violet]
+	subgraph cluster_101 {
+		rank = same
+		label = "Level 2 (01)"
+		subgraph {
+			"3.2" -> "8.2"
+			"3.2" -> "8.2"
+		}
+		subgraph {
+			"8.2" -> "3.2"
+			"8.2" -> "3.2"
+		}
+	}
+
+	edge [color=brown]
+	subgraph cluster_1010 {
+		rank = same
+		label = "Level 3 (010)"
+		subgraph {
+			"3.3" -> "3.3"
+			"3.3" -> "3.3"
+		}
+	}
+
+	edge [color=burlywood]
+	subgraph cluster_1011 {
+		rank = same
+		label = "Level 3 (011)"
+		subgraph {
+			"8.3" -> "8.3"
+			"8.3" -> "8.3"
+		}
+	}
+
+	edge [color=orange]
+	subgraph cluster_11 {
+		rank = same
+		label = "Level 1 (1)"
+		subgraph {
+			"2.1" -> "5.1"
+			"2.1" -> "4.1"
+		}
+		subgraph {
+			"5.1" -> "7.1"
+			"5.1" -> "2.1"
+		}
+		subgraph {
+			"7.1" -> "4.1"
+			"7.1" -> "5.1"
+		}
+		subgraph {
+			"4.1" -> "2.1"
+			"4.1" -> "7.1"
+		}
+	}
+
+	edge [color=grey]
+	subgraph cluster_110 {
+		rank = same
+		label = "Level 2 (10)"
+		subgraph {
+			"5.2" -> "7.2"
+			"5.2" -> "4.2"
+		}
+		subgraph {
+			"7.2" -> "4.2"
+			"7.2" -> "5.2"
+		}
+		subgraph {
+			"4.2" -> "5.2"
+			"4.2" -> "7.2"
+		}
+	}
+
+	edge [color=cadetblue]
+	subgraph cluster_1100 {
+		rank = same
+		label = "Level 3 (100)"
+		subgraph {
+			"7.3" -> "4.3"
+			"7.3" -> "4.3"
+		}
+		subgraph {
+			"4.3" -> "7.3"
+			"4.3" -> "7.3"
+		}
+	}
+
+	edge [color=red]
+	subgraph cluster_11000 {
+		rank = same
+		label = "Level 4 (1000)"
+		subgraph {
+			"4.4" -> "4.4"
+			"4.4" -> "4.4"
+		}
+	}
+
+	edge [color=green]
+	subgraph cluster_11001 {
+		rank = same
+		label = "Level 4 (1001)"
+		subgraph {
+			"7.4" -> "7.4"
+			"7.4" -> "7.4"
+		}
+	}
+
+	edge [color=chartreuse]
+	subgraph cluster_1101 {
+		rank = same
+		label = "Level 3 (101)"
+		subgraph {
+			"5.3" -> "5.3"
+			"5.3" -> "5.3"
+		}
+	}
+
+	edge [color=yellow]
+	subgraph cluster_111 {
+		rank = same
+		label = "Level 2 (11)"
+		subgraph {
+			"2.2" -> "2.2"
+			"2.2" -> "2.2"
+		}
+	}
+
+
+}

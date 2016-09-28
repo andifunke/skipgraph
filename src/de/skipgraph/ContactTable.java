@@ -13,6 +13,7 @@ public class ContactTable {
 
 	private final Node node;
 	private LinkedList<ContactLevel> contactTable = new LinkedList<>();
+	private Node lastJoiningNode;
 
 
 	public ContactTable(Node node) {
@@ -25,6 +26,14 @@ public class ContactTable {
 
 	public ContactLevel get(int i) {
 		return contactTable.get(i);
+	}
+
+	public Node getLastJoiningNode() {
+		return lastJoiningNode;
+	}
+
+	public void setLastJoiningNode(Node lastJoiningNode) {
+		this.lastJoiningNode = lastJoiningNode;
 	}
 
 	public boolean addLevel(ContactLevel level) {
@@ -96,7 +105,7 @@ public class ContactTable {
 			// using local variables for better readability
 			Contact currentPrev = getLevel(i).getPrevContact();
 			Contact currentNext = getLevel(i).getNextContact();
-			byte prefix = getLevel(i).getPrefix();
+			int prefix = getLevel(i).getPrefix();
 
 			// updating the prevNode of nextNode
 			SetContactOperation setPrevOnNext = new SetContactOperation(i, prefix, PREV, currentPrev);
@@ -113,18 +122,18 @@ public class ContactTable {
 	 * until it gets to a level where it is its own contact
 	 */
 	public void joinLevels() {
-		int counter = Main.skipGraph.getCounter();
-		Main.skipGraph.buildDotFile(counter+"_0_beforeJoin.dot");
+		Main.skipGraph.buildDotFile(node+"_0_beforeJoin.dot");
+
 		while (node.getContactTable().getLevel(size()-1).getNextContact().getNode() != node) {
-			byte prefix = SkipGraph.generatePrefix();
+			int prefix = Main.skipGraph.generatePrefix();
 			Contact selfContact = node.thisContact();
 			ContactLevel temporarySelfContactLevel = new ContactLevel(selfContact, selfContact, prefix);
 			node.getContactTable().addLevel(temporarySelfContactLevel);
 			ModifyContactsOperation joinLevel = new JoinLevelOperation(size()-1, prefix, node);
 			node.getContactTable().getLevel(size()-2).getNextContact().getNode().execute(joinLevel);
-			//System.out.println("Size: "+size());
 		}
-		Main.skipGraph.buildDotFile(counter+"_1_afterJoin.dot");
+
+		Main.skipGraph.buildDotFile(node+"_1_afterJoin.dot");
 	}
 
 	public String toString() {

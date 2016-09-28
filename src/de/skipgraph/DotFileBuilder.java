@@ -4,16 +4,26 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class DotFileBuilder {
 
+	private boolean plotAutomatically = false;
+	private boolean useCluster = false;
 	private final Node head;
 	private String code = null;
 	private SortedMap<String, LinkedList<ContactTupel>> graphPerLevelAndPrefixMap = new TreeMap<>();
+	private static File dir;
 
 	public DotFileBuilder(Node head) {
 		this.head = head;
+	}
+
+	public DotFileBuilder(Node head, Boolean plotAutomatically, Boolean useCluster) {
+		this.head = head;
+		this.plotAutomatically = plotAutomatically;
+		this.useCluster = useCluster;
 	}
 
 
@@ -51,7 +61,7 @@ public class DotFileBuilder {
 			}
 		} while (next != head);
 
-		sbHorizontal.append(generateHorizontalSubgraphsFromLevelMap(false));
+		sbHorizontal.append(generateHorizontalSubgraphsFromLevelMap());
 		sbContent.append("\t}\n\n");
 		sbMain.append(sbVertical).append(sbContent).append(sbHorizontal);
 		sbMain.append("\n}\n");
@@ -108,17 +118,16 @@ public class DotFileBuilder {
 		}
 	}
 
-	private StringBuilder generateHorizontalSubgraphsFromLevelMap(boolean cluster) {
+	private StringBuilder generateHorizontalSubgraphsFromLevelMap() {
 		if (graphPerLevelAndPrefixMap.isEmpty()) {
 			return null;
 		}
 
 		StringBuilder sb = new StringBuilder();
-		String clusterStr = cluster ? "cluster_" : "";
-		int i = 0;
+		String clusterStr = useCluster ? "cluster_" : "";
 
 		for (Map.Entry<String, LinkedList<ContactTupel>> entry : graphPerLevelAndPrefixMap.entrySet()) {
-			sb.append(String.format("\tedge [color=%s]\n", color(i++)));
+			sb.append(String.format("\tedge [color=%s]\n", colorByInt(keyToInt(entry.getKey()))));
 			sb.append(String.format("\tsubgraph %s%s {\n", clusterStr, entry.getKey()));
 			sb.append("\t\trank = same\n");
 			sb.append(String.format("\t\tlabel = \"Level %d%s\"\n", entry.getValue().getFirst().getIndex(),
@@ -140,8 +149,26 @@ public class DotFileBuilder {
 	}
 
 
-	private String color(int i) {
-		switch (i % 8) {
+	private int keyToInt(String key) {
+		int keyInt = 0;
+		for (int i=0; i<key.length(); i++) {
+			keyInt = keyInt << 1;
+			switch (key.charAt(i)) {
+				case '0':
+					break;
+				case '1':
+					keyInt++;
+					break;
+				default:
+					return -1;
+			}
+		}
+		return keyInt;
+	}
+
+
+	private String colorByInt(int i) {
+		switch (i % 23) {
 			case 0:
 				return "blue";
 			case 1:
@@ -158,6 +185,36 @@ public class DotFileBuilder {
 				return "grey";
 			case 7:
 				return "yellow";
+			case 8:
+				return "aquamarine";
+			case 9:
+				return "darkslategray";
+			case 10:
+				return "brown";
+			case 11:
+				return "burlywood";
+			case 12:
+				return "cadetblue";
+			case 13:
+				return "chartreuse";
+			case 14:
+				return "chocolate";
+			case 15:
+				return "cornflowerblue";
+			case 16:
+				return "cornsilk4";
+			case 17:
+				return "crimson";
+			case 18:
+				return "darkgoldenrod";
+			case 19:
+				return "darkolivegreen";
+			case 20:
+				return "deeppink";
+			case 21:
+				return "indigo";
+			case 22:
+				return "navy";
 		}
 		return "black";
 	}
@@ -176,23 +233,40 @@ public class DotFileBuilder {
 	}
 
 
-	public void write(String filename) {
+
+	public void writeFile(String filename) {
 		try {
 
-			File file = new File("graph/"+filename);
+			if (dir == null) {
+				makeDir();
+			}
+			File file = new File(dir, filename);
 
 			if (!file.exists()) {
 				file.createNewFile();
 			}
-
 			FileWriter fw = new FileWriter(file.getAbsoluteFile());
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(this.toString());
 			bw.close();
-			plot(file.getAbsolutePath());
+			if (plotAutomatically) {
+				plot(file.getAbsolutePath());
+			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+
+	private void makeDir() {
+		Date date = new Date( );
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat ("yyyy-MM-dd_hh-mm-ss-SSS");
+		String formatedDate = simpleDateFormat.format(date);
+		dir = new File("graph/"+formatedDate+"/");
+
+		if (!dir.exists()) {
+			dir.mkdir();
 		}
 	}
 

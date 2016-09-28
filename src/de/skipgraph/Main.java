@@ -3,22 +3,18 @@ package de.skipgraph;
 import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
 
-	public static SkipGraph skipGraph = new SkipGraph(3, 9);
+	public static SkipGraph skipGraph = new SkipGraph(5, 30);
+	private static long seed = 0L;
+	public static Random random = new Random(seed);
 
 	public static void main(String[] args) {
 
-/*		int sum = 0;
-		for (int i=0; i<100000; i++) {
-			byte prefix = (byte)(Math.random() + 0.5);
-			System.out.println(prefix);
-			sum += prefix;
-			System.out.println(sum);
-		}
-		System.exit(0);
-*/
+		skipGraph.init();
+
 		// building SkipGraph
 		//SkipGraph skipGraph = new SkipGraph(2, 6);
 		//skipGraph.print();
@@ -53,8 +49,8 @@ public class Main {
 		elements.add(new Element("MEM", new BigDecimal("10.1234"), 5, 987));
 		elements.add(new Element("STOR", new BigDecimal(5), 5, 987));
 		elements.add(new Element("CPU", new BigDecimal(5000), 6, 987));
-		for (int i=0; i<100; i++) {
-			int rand = (int)(Math.random()*4);
+		for (int i=0; i<1000; i++) {
+			int rand = Main.random.nextInt(4);
 			String capacity = "";
 			switch (rand) {
 				case 0:
@@ -70,14 +66,14 @@ public class Main {
 					capacity = "MEM";
 					break;
 			}
-			BigDecimal value = new BigDecimal((int)(Math.random()*10000));
-			int ip = (int)(Math.random()*10000);
-			int port = (int)(Math.random()*10000);
+			BigDecimal value = new BigDecimal(Main.random.nextInt(10000));
+			int ip = Main.random.nextInt(10000);
+			int port = Main.random.nextInt(10000);
 			elements.add(new Element(capacity, value, ip, port));
 		}
 		elements.forEach(skipGraph::input);
 		skipGraph.print();
-		skipGraph.buildDotFile("final.dot");
+		skipGraph.buildDotFile("final.dot", true, true);
 		System.exit(0);
 
 		skipGraph.delete(elements.get(3));

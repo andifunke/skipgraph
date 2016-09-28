@@ -2,7 +2,7 @@ package de.skipgraph;
 
 public class ContactLevel {
 
-	private byte prefix;
+	private int prefix;
 	private Contact prevContact;
 	private Contact nextContact;
 
@@ -13,7 +13,7 @@ public class ContactLevel {
 	}
 	*/
 
-	public ContactLevel(Contact prevContact, Contact nextContact, byte prefix) {
+	public ContactLevel(Contact prevContact, Contact nextContact, int prefix) {
 		this.prefix = prefix;
 		this.prevContact = prevContact;
 		this.nextContact = nextContact;
@@ -43,19 +43,13 @@ public class ContactLevel {
 		this.nextContact = new Contact(node);
 	}
 
-	public byte getPrefix() {
+	public int getPrefix() {
 		return prefix;
 	}
 
-	/*
-	public void setPrefix(int prefix) {
-		this.prefix = prefix;
-	}
-	*/
-
 	public String toString() {
-		return String.format("(next: %08X, prev: %08X)",
-				getNextContact().getNode().getId(), getPrevContact().getNode().getId());
+		return String.format("(next: %s, prev: %s)",
+				getNextContact().getNode(), getPrevContact().getNode());
 	}
 
 }
