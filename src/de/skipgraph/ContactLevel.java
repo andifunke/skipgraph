@@ -48,8 +48,14 @@ public class ContactLevel {
 	}
 
 	public String toString() {
-		return String.format("(next: %s, prev: %s)",
-				getNextContact().getNode(), getPrevContact().getNode());
+		String prevNode = getPrevContact().getNode().toString();
+		String prevStart = getPrevContact().getRangeStart() == null ? "-inf" : getPrevContact().getRangeStart().toString();
+		String prevEnd = getPrevContact().getRangeEnd() == null ? "inf" : getPrevContact().getRangeEnd().toString();
+		String nextNode = getNextContact().getNode().toString();
+		String nextStart = getNextContact().getRangeStart() == null ? "-inf" : getNextContact().getRangeStart().toString();
+		String nextEnd = getNextContact().getRangeEnd() == null ? "inf" : getNextContact().getRangeEnd().toString();
+		return String.format("prev: %s [%s, %s), next: %s [%s, %s)",
+				prevNode, prevStart, prevEnd, nextNode, nextStart, nextEnd);
 	}
 
 }

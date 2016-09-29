@@ -2,17 +2,423 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5693356-6d36-4c8e-b6c6-b49aa2f410b8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/final.dot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/final.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOnLeaveOperation.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/10_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/10_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/11_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/11_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/12_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/12_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/13_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/13_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/14_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/14_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/15_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/15_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/16_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/16_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/17_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/17_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/18_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/18_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/19_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/19_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/20_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/20_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/21_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/21_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/22_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/22_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/23_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/23_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/24_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/24_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/25_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/25_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/26_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/26_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/27_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/27_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/28_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/28_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/29_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/29_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/2_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/2_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/30_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/30_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/31_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/31_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/32_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/32_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/33_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/33_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/34_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/34_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/35_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/35_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/36_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/36_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/37_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/37_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/38_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/38_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/39_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/39_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/3_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/3_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/40_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/40_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/41_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/41_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/42_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/42_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/43_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/43_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/44_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/44_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/45_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/45_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/46_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/46_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/47_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/47_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/48_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/48_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/49_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/49_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/4_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/4_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/50_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/50_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/51_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/51_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/5_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/5_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/6_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/6_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/7_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/7_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/8_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/8_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/9_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/9_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/final.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-13-13-764/final.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/10_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/10_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/11_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/11_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/12_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/12_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/13_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/13_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/14_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/14_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/15_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/15_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/16_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/16_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/17_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/17_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/18_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/18_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/19_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/19_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/20_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/20_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/21_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/21_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/22_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/22_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/23_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/23_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/24_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/24_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/25_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/25_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/26_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/26_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/27_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/27_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/28_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/28_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/29_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/29_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/2_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/2_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/30_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/30_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/31_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/31_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/32_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/32_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/33_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/33_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/34_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/34_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/35_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/35_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/36_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/36_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/37_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/37_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/38_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/38_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/39_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/39_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/3_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/3_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/40_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/40_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/41_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/41_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/42_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/42_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/43_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/43_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/44_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/44_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/45_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/45_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/46_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/46_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/47_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/47_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/48_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/48_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/49_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/49_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/4_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/4_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/50_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/50_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/51_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/51_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/5_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/5_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/6_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/6_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/7_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/7_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/8_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/8_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/9_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/9_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/final.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-15-30-417/final.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/10_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/10_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/11_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/11_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/12_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/12_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/13_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/13_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/14_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/14_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/15_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/15_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/16_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/16_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/17_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/17_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/18_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/18_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/19_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/19_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/20_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/20_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/21_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/21_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/22_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/22_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/23_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/23_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/24_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/24_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/25_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/25_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/26_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/26_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/27_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/27_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/28_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/28_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/29_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/29_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/2_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/2_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/30_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/30_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/31_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/31_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/32_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/32_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/33_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/33_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/34_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/34_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/35_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/35_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/36_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/36_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/37_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/37_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/38_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/38_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/39_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/39_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/3_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/3_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/40_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/40_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/41_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/41_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/42_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/42_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/43_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/43_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/44_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/44_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/45_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/45_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/46_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/46_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/47_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/47_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/48_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/48_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/49_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/49_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/4_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/4_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/50_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/50_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/51_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/51_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/5_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/5_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/6_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/6_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/7_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/7_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/8_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/8_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/9_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/9_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/final.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-23-21-442/final.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/10_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/10_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/11_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/11_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/12_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/12_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/13_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/13_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/14_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/14_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/15_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/15_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/16_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/16_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/17_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/17_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/18_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/18_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/19_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/19_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/20_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/20_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/21_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/21_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/22_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/22_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/23_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/23_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/24_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/24_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/25_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/25_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/26_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/26_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/27_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/27_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/28_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/28_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/29_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/29_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/2_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/2_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/30_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/30_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/31_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/31_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/32_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/32_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/33_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/33_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/34_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/34_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/35_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/35_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/36_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/36_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/37_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/37_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/38_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/38_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/39_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/39_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/3_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/3_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/40_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/40_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/41_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/41_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/42_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/42_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/43_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/43_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/44_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/44_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/45_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/45_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/46_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/46_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/47_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/47_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/48_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/48_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/49_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/49_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/4_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/4_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/50_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/50_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/51_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/51_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/5_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/5_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/6_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/6_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/7_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/7_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/8_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/8_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/9_0_beforeJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/9_1_afterJoin.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/final.dot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/graph/2016-09-28_10-35-16-534/final.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/ContactLevel.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/ContactLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/ContactTable.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/ContactTable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/DotFileBuilder.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/DotFileBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/ElementTable.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/ElementTable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/Main.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/Node.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/Node.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/JoinLevelOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/JoinLevelOperation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOperation.java" afterPath="$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOperation.java" />
     </list>
     <ignored path="skipgraph.iws" />
@@ -40,11 +446,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="262">
-                  <caret line="75" column="52" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
+                <state relative-caret-position="-135">
+                  <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -53,18 +459,18 @@
           <file leaf-file-name="SkipGraph.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="622">
-                  <caret line="174" column="12" selection-start-line="174" selection-start-column="12" selection-end-line="174" selection-end-column="12" />
+                <state relative-caret-position="1087">
+                  <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Node.java">
+          <file leaf-file-name="DeleteOperation.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2040">
-                  <caret line="136" column="39" selection-start-line="136" selection-start-column="39" selection-end-line="136" selection-end-column="39" />
+                <state relative-caret-position="495">
+                  <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -73,8 +479,18 @@
           <file leaf-file-name="SetContactOperation.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOperation.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+                <state relative-caret-position="315">
+                  <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Node.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="267">
+                  <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
@@ -84,11 +500,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="ElementTable.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ElementTable.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ElementTable.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3225">
-                  <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+                <state relative-caret-position="367">
+                  <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -97,8 +513,8 @@
           <file leaf-file-name="ContactTable.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactTable.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+                <state relative-caret-position="787">
+                  <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -107,18 +523,18 @@
           <file leaf-file-name="JoinLevelOperation.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/JoinLevelOperation.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="337">
+                <state relative-caret-position="90">
                   <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DotFileBuilder.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DotFileBuilder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/DotFileBuilder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                <state relative-caret-position="495">
+                  <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
                   <folding>
                     <element signature="imports" expanded="false" />
                   </folding>
@@ -139,8 +555,8 @@
           <file leaf-file-name="ContactLevel.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactLevel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+                <state relative-caret-position="563">
+                  <caret line="54" column="70" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
                   <folding />
                 </state>
               </provider>
@@ -220,17 +636,19 @@
         <option value="$PROJECT_DIR$/src/de/skipgraph/operations/ModifyContactsOperation.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/Contact.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/DotBuilder.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/ElementTable.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/Pair.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/ContactTupel.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/Node.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/ContactLevel.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOperation.java" />
-        <option value="$PROJECT_DIR$/src/de/skipgraph/ContactTable.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/operations/JoinLevelOperation.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/operations/CheckRedundancyOperation.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOnLeaveOperation.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOperation.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/DotFileBuilder.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/ContactTable.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/Node.java" />
         <option value="$PROJECT_DIR$/src/de/skipgraph/Main.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/ContactLevel.java" />
+        <option value="$PROJECT_DIR$/src/de/skipgraph/ElementTable.java" />
       </list>
     </option>
   </component>
@@ -379,9 +797,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -456,6 +871,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -946,6 +1364,8 @@
       <workItem from="1474592241765" duration="50000" />
       <workItem from="1475068622766" duration="17789000" />
       <workItem from="1475092305119" duration="2637000" />
+      <workItem from="1475154571986" duration="4279000" />
+      <workItem from="1475173612173" duration="11628000" />
     </task>
     <task id="LOCAL-00001" summary="move methods to operation classes">
       <created>1473111016157</created>
@@ -979,7 +1399,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150129000" />
+    <option name="totallyTimeSpent" value="166036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1279" y="0" width="2562" height="1415" extended-state="6" />
@@ -992,13 +1412,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32517758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32517758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12490056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4498816" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1646778" sideWeight="0.4958775" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1010,7 +1431,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1646778" sideWeight="0.5041225" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19100237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1082,14 +1502,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/QueryOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/SearchOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1304,14 +1716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/LinkedList.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -1358,13 +1762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/List.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Element.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1380,26 +1777,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ElementTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3225">
-          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/text/SimpleDateFormat.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactTupel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1418,68 +1799,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactLevel.java">
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/DeleteOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        <state relative-caret-position="495">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="136" column="39" selection-start-line="136" selection-start-column="39" selection-end-line="136" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOperation.java">
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOnLeaveOperation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactTable.java">
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/util/List.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        <state relative-caret-position="450">
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/JoinLevelOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="90">
           <caret line="48" column="51" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/operations/SetContactOperation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="174" column="12" selection-start-line="174" selection-start-column="12" selection-end-line="174" selection-end-column="12" />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/DotFileBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="495">
+          <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactTupel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="787">
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ContactLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="54" column="70" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="75" column="52" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
+        <state relative-caret-position="-135">
+          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/ElementTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="105" column="0" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/SkipGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1087">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/de/skipgraph/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="98" column="36" selection-start-line="98" selection-start-column="36" selection-end-line="98" selection-end-column="36" />
           <folding />
         </state>
       </provider>

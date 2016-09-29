@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Main {
 
-	public static SkipGraph skipGraph = new SkipGraph(5, 30);
+	public static SkipGraph skipGraph = new SkipGraph(10, 30);
 	private static long seed = 0L;
 	public static Random random = new Random(seed);
 
@@ -49,7 +49,7 @@ public class Main {
 		elements.add(new Element("MEM", new BigDecimal("10.1234"), 5, 987));
 		elements.add(new Element("STOR", new BigDecimal(5), 5, 987));
 		elements.add(new Element("CPU", new BigDecimal(5000), 6, 987));
-		for (int i=0; i<1000; i++) {
+		for (int i=0; i<100; i++) {
 			int rand = Main.random.nextInt(4);
 			String capacity = "";
 			switch (rand) {
@@ -72,9 +72,10 @@ public class Main {
 			elements.add(new Element(capacity, value, ip, port));
 		}
 		elements.forEach(skipGraph::input);
-		skipGraph.print();
-		skipGraph.buildDotFile("final.dot", true, true);
-		System.exit(0);
+		//skipGraph.print();
+		//skipGraph.buildDotFile("final_cluster.dot", true, true);
+		//skipGraph.buildDotFile("final.dot", true);
+		//System.exit(0);
 
 		skipGraph.delete(elements.get(3));
 		skipGraph.delete(elements.get(3));
@@ -84,9 +85,8 @@ public class Main {
 		skipGraph.update(elements.get(2), new Element("BW", new BigDecimal(9), 3, 7890));
 		skipGraph.update(elements.get(2), new Element("MEM", new BigDecimal(9), 2, 7890));
 		skipGraph.update(elements.get(2), new Element("MEM", new BigDecimal(9), 3, 1231));
-		//skipGraph.print();
+		skipGraph.print();
 
-		/*
 		System.out.println(headline("testing get"));
 		try {
 			skipGraph.printResult(skipGraph.get(3));
@@ -100,9 +100,7 @@ public class Main {
 			skipGraph.printResult(skipGraph.get(130));
 		} catch (NullPointerException e) {
 		}
-		*/
 
-		/*
 		System.out.println(headline("testing search"));
 		skipGraph.printResult(skipGraph.search("CPU", new BigDecimal(2), new BigDecimal(20)));
 		skipGraph.printResult(skipGraph.search(new BigDecimal(2), new BigDecimal(20)));
@@ -110,15 +108,24 @@ public class Main {
 		skipGraph.printResult(skipGraph.search(new BigDecimal(20)));
 		skipGraph.printResult(skipGraph.search(new BigDecimal(20), 3));
 		skipGraph.printResult(skipGraph.search(new BigDecimal(10), 10));
-*/
+
 
 		System.out.println(headline("testing leave"));
 		skipGraph.delete(new Element("BW", new BigDecimal(20), 4, 987));
 		skipGraph.delete(new Element("BW", new BigDecimal(40), 1, 1230));
 		skipGraph.delete(new Element("MEM", new BigDecimal(80), 2, 4560));
+		// deleting many elements
+		int numberOfDeletedElements = elements.size()/2;
+		for (int i=0; i<numberOfDeletedElements; i++) {
+			int index = random.nextInt(elements.size());
+			skipGraph.delete(elements.get(index));
+		}
 
-		skipGraph.print();
-		skipGraph.buildDotFile("afterdelete.dot");
+		//skipGraph.print();
+		//skipGraph.buildDotFile("afterdelete.dot");
+
+		skipGraph.buildDotFile("final_cluster.dot", true, true);
+		skipGraph.buildDotFile("final.dot", true);
 
 	}
 

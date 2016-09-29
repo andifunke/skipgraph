@@ -102,7 +102,7 @@ public class ElementTable {
 		List<Element> tmp = elementTable.subList(size() / 2 + roundup, size());
 		ArrayList<Element> newTable = new ArrayList<>(tmp);
 		tmp.clear();
-		BigDecimal newStart = elementTable.get(size() - 1).getValue();
+		BigDecimal newStart = newTable.get(0).getValue();
 		BigDecimal newEnd = rangeEnd;
 		rangeEnd = newStart;
 		return new ElementTable(newTable, minSize, maxSize, newStart, newEnd);
@@ -119,6 +119,7 @@ public class ElementTable {
 	public void extendElementTableAtStart(ElementTable extension, Node node) {
 		rangeStart = extension.getRangeStart();
 		elementTable.addAll(0, extension.getTable());
+		node.getContactTable().updateAllContacts();
 		// should be redundant
 		checkMaxTableSize(node);
 	}
@@ -134,6 +135,7 @@ public class ElementTable {
 	public void extendElementTableAtEnd(ElementTable extension, Node node) {
 		rangeEnd = extension.getRangeEnd();
 		elementTable.addAll(extension.getTable());
+		node.getContactTable().updateAllContacts();
 		// should be redundant
 		checkMaxTableSize(node);
 	}
@@ -203,11 +205,11 @@ public class ElementTable {
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("--- element table (start:%s, end:%s, size:%d, min-size:%d, max-size:%d)\n",
+		sb.append(String.format("--- element table [%s, %s) <size:%d (min:%d, max:%d)>\n",
 				getRangeStart(), getRangeEnd() == null ? "inf" : getRangeEnd(), size(), getMinSize(), getMaxSize()));
 		sort();
 		for (int i = 0; i < size(); i++) {
-			String index = String.format("%03d ", i);
+			String index = String.format("%02d ", i);
 			sb.append(index + get(i) + "\n");
 		}
 		return sb.toString();

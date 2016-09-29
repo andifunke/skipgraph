@@ -53,7 +53,7 @@ public class Node {
 	}
 
 	private int createID() {
-		return Main.skipGraph.getCounter();
+		return Main.skipGraph.getNodeCounter();
 	}
 
 	public int getId() {
@@ -88,12 +88,14 @@ public class Node {
 		// check if successor has enough free space in table
 		if (nextNode != this &&
 				nextNode.getElementTable().getNumberOfFreeSlots() > elementTable.size()) {
+			Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+this+"_beforeLeaving.dot", true);
 			nextNode.getElementTable().extendElementTableAtStart(elementTable, nextNode);
 			contactTable.updatingContactsOnLeave();
 		}
 		// else check if predecessor has enough free space in table
 		else if (prevNode != this &&
 				prevNode.getElementTable().getNumberOfFreeSlots() > elementTable.size()) {
+			Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+this+"_beforeLeaving.dot", true);
 			prevNode.getElementTable().extendElementTableAtEnd(elementTable, prevNode);
 			contactTable.updatingContactsOnLeave();
 		}
@@ -106,8 +108,11 @@ public class Node {
 	public void split() {
 		Node nextNode = contactTable.getNextNode();
 
+		// TODO: split table so that predecessor and succor get equal amount based on their number of free slots
 		// split element table
 		ElementTable newElementTable = elementTable.split();
+		// update all contacts
+		contactTable.updateAllContacts();
 
 		// check if successor != this && can handle separated elements
 		if (nextNode != this &&

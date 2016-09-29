@@ -10,41 +10,50 @@ import java.util.*;
 public class DotFileBuilder {
 
 	private boolean plotAutomatically = false;
-	private boolean useCluster = false;
+	private boolean cluster = false;
+	private boolean strict = true;
+	private boolean concentrate = true;
 	private final Node head;
 	private String code = null;
 	private SortedMap<String, LinkedList<ContactTupel>> graphPerLevelAndPrefixMap = new TreeMap<>();
 	private static File dir;
+	private static int fileCounter = 1;
 
 	public DotFileBuilder(Node head) {
 		this.head = head;
 	}
 
-	public DotFileBuilder(Node head, Boolean plotAutomatically, Boolean useCluster) {
+	public DotFileBuilder(Node head, Boolean plotAutomatically, Boolean cluster) {
 		this.head = head;
 		this.plotAutomatically = plotAutomatically;
-		this.useCluster = useCluster;
+		this.cluster = cluster;
 	}
 
+	public static int getFileCounter() {
+		return fileCounter++;
+	}
 
 	public void build() {
 
 		// format outer frame
 		StringBuilder sbMain = new StringBuilder();
-		sbMain.append("strict\n" +
-				"digraph SkipGraph {\n\n");
+		sbMain.append(String.format("%sstrict\n digraph SkipGraph {\n\n",
+				strict ? "" : "#"));
+		sbMain.append("\tranksep=1.0\n" +
+				"\tconcentrate=" + concentrate + "\n\n");
 
 		// format vertical subgraphs with "pseudo"-edges
+		int clusterInt = cluster ? 1 : 50;
 		StringBuilder sbVertical = new StringBuilder();
 		sbVertical.append("\t# vertical\n" +
-				"\tedge [dir=none style=dashed]\n");
+				"\tedge [dir=none style=dashed, weight=" + clusterInt + "]\n");
 
 		// cluster for element table content
 		StringBuilder sbContent = new StringBuilder();
 		sbContent.append("\n\t# horizontal\n" +
-				"\tedge [dir=forward, style=solid]\n" +
+				"\tedge [dir=forward, style=solid, weight=1]\n" +
 				"\tsubgraph cluster_content {\n" +
-				"\t\trank = same\n");
+				"\t\t#rank=same\n");
 
 		// format horizontal subgraphs with "real"-edges
 		StringBuilder sbHorizontal = new StringBuilder();
@@ -52,7 +61,11 @@ public class DotFileBuilder {
 		Node next = head;
 		do {
 			sbVertical.append(formatVerticalForNode(next));
+			sbContent.append("\t\t\"" + next + "\" [shape=box, label=\n");
+			sbContent.append("\t\t\t<\n");
 			sbContent.append(formatElementTableForNode(next));
+			sbContent.append(formatContactTableForNode(next));
+			sbContent.append("\t\t\t>]\n");
 			addToLevelMap(next);
 			next = next.getContactTable().getNextNode();
 			if (next == null) {
@@ -85,8 +98,6 @@ public class DotFileBuilder {
 	private String formatElementTableForNode(Node node) {
 		ElementTable elementTable = node.getElementTable();
 		StringBuilder sb = new StringBuilder();
-		sb.append("\t\t\"" + node + "\" [shape=box, label=\n");
-		sb.append("\t\t\t<\n");
 		sb.append("\t\t\t\t<B>ID:</B> " + node + "<BR ALIGN=\"LEFT\"/>\n");
 		sb.append(String.format("\t\t\t\tresponsible for <B>[%s, %s)</B><BR ALIGN=\"LEFT\"/>\n",
 					elementTable.getRangeStart(), elementTable.getRangeEnd() == null ? "inf" : elementTable.getRangeEnd()));
@@ -94,10 +105,20 @@ public class DotFileBuilder {
 		for (int i = 0; i < elementTable.size(); i++) {
 			sb.append(String.format("\t\t\t\t%03d %s<BR ALIGN=\"LEFT\"/>\n", i, elementTable.get(i)));
 		}
-		sb.append(String.format("\t\t\t<B>size:</B>%d, <B>min-size:</B>%d, <B>max-size:</B>%d<BR ALIGN=\"LEFT\"/>",
+		sb.append(String.format("\t\t\t<B>size:</B>%d, <B>min-size:</B>%d, <B>max-size:</B>%d<BR ALIGN=\"LEFT\"/>\n",
 				elementTable.size(), elementTable.getMinSize(), elementTable.getMaxSize()));
-		sb.append("\t\t\t>]\n");
 
+		return sb.toString();
+	}
+
+
+	private String formatContactTableForNode(Node node) {
+		ContactTable contactTable = node.getContactTable();
+		StringBuilder sb = new StringBuilder();
+		sb.append((String.format("\t\t\t\t<B>contacts:</B> (<B>size:</B>%d)<BR ALIGN=\"LEFT\"/>\n", contactTable.size())));
+		for (int i = 0; i < contactTable.size(); i++) {
+			sb.append(String.format("\t\t\t\t%d: %s<BR ALIGN=\"LEFT\"/>\n", i, contactTable.get(i)));
+		}
 		return sb.toString();
 	}
 
@@ -124,14 +145,14 @@ public class DotFileBuilder {
 		}
 
 		StringBuilder sb = new StringBuilder();
-		String clusterStr = useCluster ? "cluster_" : "";
+		String clusterStr = cluster ? "cluster_" : "";
 
 		for (Map.Entry<String, LinkedList<ContactTupel>> entry : graphPerLevelAndPrefixMap.entrySet()) {
 			sb.append(String.format("\tedge [color=%s]\n", colorByInt(keyToInt(entry.getKey()))));
 			sb.append(String.format("\tsubgraph %s%s {\n", clusterStr, entry.getKey()));
-			sb.append("\t\trank = same\n");
-			sb.append(String.format("\t\tlabel = \"Level %d%s\"\n", entry.getValue().getFirst().getIndex(),
-					entry.getKey().length() > 1 ? " ("+entry.getKey().substring(1)+")" : ""));
+			sb.append("\t\trank=same\n");
+			sb.append(String.format("\t\tlabel=\"Level %d (%s)\"\n", entry.getValue().getFirst().getIndex(),
+					entry.getKey()));
 			for (ContactTupel contactTupel : entry.getValue()) {
 				sb.append("\t\tsubgraph {\n");
 				sb.append(String.format("\t\t\t\"%s.%d\" -> \"%s.%d\"\n",

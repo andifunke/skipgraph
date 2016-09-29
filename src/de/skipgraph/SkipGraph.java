@@ -5,7 +5,6 @@ import de.skipgraph.operations.*;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.BooleanSupplier;
 
 
 public class SkipGraph {
@@ -13,7 +12,7 @@ public class SkipGraph {
 	private Node skipGraphHead;
 	private int minTableSize = 10;
 	private int maxTableSize = 100;
-	private int counter = 1;
+	private int nodeCounter = 1;
 	private final int logFactor = 2;
 
 
@@ -29,8 +28,8 @@ public class SkipGraph {
 		return Main.random.nextInt(logFactor);
 	}
 
-	public int getCounter() {
-		return counter++;
+	public int getNodeCounter() {
+		return nodeCounter++;
 	}
 
 	/*
@@ -143,8 +142,8 @@ public class SkipGraph {
 			do {
 				i++;
 				System.out.println(String.format("> node #%d (id %s)", i, next));
-				next.printContactTable();
 				next.printElementTable();
+				next.printContactTable();
 				next = next.getContactTable().getNextNode();
 				if (next == null) {
 					System.out.println("link to next node missing - aborting...");

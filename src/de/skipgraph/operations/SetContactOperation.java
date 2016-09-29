@@ -40,11 +40,15 @@ public class SetContactOperation extends ModifyContactsOperation {
 
 	@Override
 	public List<Element> execute(Node thisNode) {
-		//System.out.println(thisNode);
+		updateContactsOn(thisNode);
+		return null;
+	}
+
+	void updateContactsOn(Node thisNode) {
 		// in a perfect world this case should never be true
 		if (thisNode.getContactTable().getLevel(level).getPrefix() != prefix) {
 			System.out.println("**********************************but it is");
-			return null;
+			return;
 		}
 		if (thisNode.getContactTable().size() > level) {
 			switch (contactType) {
@@ -56,6 +60,6 @@ public class SetContactOperation extends ModifyContactsOperation {
 					break;
 			}
 		}
-		return null;
 	}
+
 }

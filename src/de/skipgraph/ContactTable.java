@@ -2,6 +2,7 @@ package de.skipgraph;
 
 import de.skipgraph.operations.JoinLevelOperation;
 import de.skipgraph.operations.ModifyContactsOperation;
+import de.skipgraph.operations.SetContactOnLeaveOperation;
 import de.skipgraph.operations.SetContactOperation;
 
 import java.math.BigDecimal;
@@ -107,14 +108,15 @@ public class ContactTable {
 			Contact currentNext = getLevel(i).getNextContact();
 			int prefix = getLevel(i).getPrefix();
 
-			// updating the prevNode of nextNode
-			SetContactOperation setPrevOnNext = new SetContactOperation(i, prefix, PREV, currentPrev);
+			// updating the prevNode of successor
+			SetContactOperation setPrevOnNext = new SetContactOnLeaveOperation(i, prefix, PREV, currentPrev);
 			currentNext.getNode().execute(setPrevOnNext);
-			// updating the nextNode of prevNode
-			SetContactOperation setNextOnPrev = new SetContactOperation(i, prefix, NEXT, currentNext);
+			// updating the nextNode of predecessor
+			SetContactOperation setNextOnPrev = new SetContactOnLeaveOperation(i, prefix, NEXT, currentNext);
 			currentPrev.getNode().execute(setNextOnPrev);
 		}
-		System.out.println("  ! bye bye");
+		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_afterLeaving.dot", true);
+		System.out.println("   ID:" + node + " has left");
 	}
 
 	/**
@@ -122,7 +124,7 @@ public class ContactTable {
 	 * until it gets to a level where it is its own contact
 	 */
 	public void joinLevels() {
-		Main.skipGraph.buildDotFile(node+"_0_beforeJoin.dot");
+		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_beforeJoining.dot", true);
 
 		while (node.getContactTable().getLevel(size()-1).getNextContact().getNode() != node) {
 			int prefix = Main.skipGraph.generatePrefix();
@@ -133,17 +135,70 @@ public class ContactTable {
 			node.getContactTable().getLevel(size()-2).getNextContact().getNode().execute(joinLevel);
 		}
 
-		Main.skipGraph.buildDotFile(node+"_1_afterJoin.dot");
+		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_afterJoining.dot", true);
 	}
 
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("--- contact table (size:%d)\n", size()));
+		sb.append(String.format("--- contact table <size:%d>\n", size()));
 		for (int i=0; i<size(); i++) {
-			String index = String.format("level %02d, prefix %d ", i, get(i).getPrefix());
+			String index = String.format("level %02d, prefix %d, ", i, get(i).getPrefix());
 			sb.append(index + get(i) + "\n");
 		}
 		return sb.toString();
+	}
+
+	/**
+	 * this method checks if there is more than one level which is only self referencing
+	 */
+	public void deleteRedundantLevels() {
+		int max = contactTable.size()-1;
+		int counter = 0;
+		while (get(max-counter) != null &&
+				get(max-counter).getPrevContact().getNode() == node &&
+				get(max-counter).getNextContact().getNode() == node) {
+			counter++;
+			System.out.println("number of selfcontact levels: " + counter);
+		}
+		for ( ; counter>1; counter--) {
+			contactTable.removeLast();
+			System.out.println("deleting redundant level");
+		}
+	}
+
+	/**
+	 * this method updates all self contacts, in case the element's table range has changed
+	 */
+	public void updateSelfContacts() {
+		for (ContactLevel level : contactTable) {
+			if (level.getPrevContact().getNode() == node) {
+				level.getPrevContact().setRangeStart(node.getElementTable().getRangeStart());
+				level.getPrevContact().setRangeEnd(node.getElementTable().getRangeEnd());
+			}
+			if (level.getNextContact().getNode() == node) {
+				level.getNextContact().setRangeStart(node.getElementTable().getRangeStart());
+				level.getNextContact().setRangeEnd(node.getElementTable().getRangeEnd());
+			}
+		}
+	}
+
+	/**
+	 * updates all contacts, in case the element's table range has changed
+	 */
+	public void updateAllContacts() {
+		for (short i=0; i<size(); i++) {
+			// using local variables for better readability
+			Contact selfContact = node.thisContact();
+			int prefix = getLevel(i).getPrefix();
+
+			// updating predecessor
+			SetContactOperation setNextContactOnPredecessor = new SetContactOperation(i, prefix, NEXT, selfContact);
+			getLevel(i).getPrevContact().getNode().execute(setNextContactOnPredecessor);
+
+			// updating successor
+			SetContactOperation setPrevContactOnSuccessor = new SetContactOperation(i, prefix, PREV, selfContact);
+			getLevel(i).getNextContact().getNode().execute(setPrevContactOnSuccessor);
+		}
 	}
 
 }
