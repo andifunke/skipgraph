@@ -2,6 +2,7 @@ package de.skipgraph;
 
 import de.skipgraph.operations.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static de.skipgraph.operations.ModifyContactsOperation.ContactType.PREV;
@@ -84,7 +85,39 @@ public class Node {
 	public void leave() {
 		Node prevNode = contactTable.getPrevNode();
 		Node nextNode = contactTable.getNextNode();
+		int prevFree = prevNode.getElementTable().getNumberOfFreeSlots();
+		int nextFree = nextNode.getElementTable().getNumberOfFreeSlots();
 
+		if (nextNode == this || prevNode == this || (prevFree+nextFree) <= elementTable.size() ) {
+			System.out.println("  ! hold your ground");
+			return;
+		}
+
+		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+this+"_beforeLeaving.dot", true);
+
+		// special case for first node in skipgraph - TODO: replace 0 with null
+		if (elementTable.getRangeStart().equals(BigDecimal.ZERO) && (nextFree > elementTable.size())) {
+			nextNode.getElementTable().extendElementTableAtStart(elementTable, nextNode);
+			contactTable.updatingContactsOnLeave();
+		}
+		// special case for last node in skipgraph
+		else if (elementTable.getRangeEnd() == null && (prevFree > elementTable.size())) {
+				prevNode.getElementTable().extendElementTableAtEnd(elementTable, prevNode);
+				contactTable.updatingContactsOnLeave();
+		}
+		// distribute the elements equally on predecessor and successor
+		else {
+			double ratio = (double) prevFree / (prevFree + nextFree);
+			ElementTable nextElementTable = elementTable.split(ratio);
+			prevNode.getElementTable().extendElementTableAtEnd(elementTable, prevNode);
+			nextNode.getElementTable().extendElementTableAtStart(nextElementTable, nextNode);
+			contactTable.updatingContactsOnLeave();
+		}
+	}
+
+	public void leave_OldBehaviour() {
+		Node prevNode = contactTable.getPrevNode();
+		Node nextNode = contactTable.getNextNode();
 		// check if successor has enough free space in table
 		if (nextNode != this &&
 				nextNode.getElementTable().getNumberOfFreeSlots() > elementTable.size()) {
@@ -99,7 +132,6 @@ public class Node {
 			prevNode.getElementTable().extendElementTableAtEnd(elementTable, prevNode);
 			contactTable.updatingContactsOnLeave();
 		}
-		// TODO: split table and distribute to prev and next
 		else {
 			System.out.println("  ! hold your ground");
 		}

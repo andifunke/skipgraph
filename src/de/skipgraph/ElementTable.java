@@ -91,20 +91,30 @@ public class ElementTable {
 		return elementTable.remove(element);
 	}
 
+	public ElementTable split() {
+		return split(0.5);
+	}
+
 	/**
 	 * splits the elementTable in two tables of same size
 	 * @return	returns the second table with bigger values
 	 */
-	public ElementTable split() {
+	public ElementTable split(double ratio) {
 		sort();
-		int roundup = 0;
-		if (size() % 2 > 0) roundup = 1;
-		List<Element> tmp = elementTable.subList(size() / 2 + roundup, size());
+		//int roundup = 0;
+		//if (size() % ratio > 0) roundup = 1;
+		int splitIndex = (int)Math.ceil( size()*ratio );
+		if (splitIndex >= size()) {
+			return null;
+		}
+
+		List<Element> tmp = elementTable.subList(splitIndex, size());
 		ArrayList<Element> newTable = new ArrayList<>(tmp);
 		tmp.clear();
 		BigDecimal newStart = newTable.get(0).getValue();
 		BigDecimal newEnd = rangeEnd;
 		rangeEnd = newStart;
+		System.out.println(String.format("    split: %d:%d", elementTable.size(),newTable.size()));
 		return new ElementTable(newTable, minSize, maxSize, newStart, newEnd);
 	}
 

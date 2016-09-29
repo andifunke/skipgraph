@@ -41,6 +41,7 @@ public class ContactTable {
 		return contactTable.add(level);
 	}
 
+	// same as get()
 	public ContactLevel getLevel(int i) {
 		return contactTable.get(i);
 	}
@@ -109,11 +110,11 @@ public class ContactTable {
 			int prefix = getLevel(i).getPrefix();
 
 			// updating the prevNode of successor
-			SetContactOperation setPrevOnNext = new SetContactOnLeaveOperation(i, prefix, PREV, currentPrev);
-			currentNext.getNode().execute(setPrevOnNext);
+			SetContactOperation setPrevNodeOnSuccessor = new SetContactOnLeaveOperation(i, prefix, PREV, currentPrev);
+			currentNext.getNode().execute(setPrevNodeOnSuccessor);
 			// updating the nextNode of predecessor
-			SetContactOperation setNextOnPrev = new SetContactOnLeaveOperation(i, prefix, NEXT, currentNext);
-			currentPrev.getNode().execute(setNextOnPrev);
+			SetContactOperation setNextNodeOnPredecessor = new SetContactOnLeaveOperation(i, prefix, NEXT, currentNext);
+			currentPrev.getNode().execute(setNextNodeOnPredecessor);
 		}
 		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_afterLeaving.dot", true);
 		System.out.println("   ID:" + node + " has left");
@@ -124,7 +125,7 @@ public class ContactTable {
 	 * until it gets to a level where it is its own contact
 	 */
 	public void joinLevels() {
-		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_beforeJoining.dot", true);
+		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_beforeJoining.dot", false);
 
 		while (node.getContactTable().getLevel(size()-1).getNextContact().getNode() != node) {
 			int prefix = Main.skipGraph.generatePrefix();
@@ -135,7 +136,7 @@ public class ContactTable {
 			node.getContactTable().getLevel(size()-2).getNextContact().getNode().execute(joinLevel);
 		}
 
-		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_afterJoining.dot", true);
+		Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+node+"_afterJoining.dot", false);
 	}
 
 	public String toString() {
@@ -158,11 +159,11 @@ public class ContactTable {
 				get(max-counter).getPrevContact().getNode() == node &&
 				get(max-counter).getNextContact().getNode() == node) {
 			counter++;
-			System.out.println("number of selfcontact levels: " + counter);
+			//System.out.println("number of selfcontact levels: " + counter);
 		}
 		for ( ; counter>1; counter--) {
 			contactTable.removeLast();
-			System.out.println("deleting redundant level");
+			//System.out.println("deleting redundant level");
 		}
 	}
 

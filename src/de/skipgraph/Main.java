@@ -49,7 +49,7 @@ public class Main {
 		elements.add(new Element("MEM", new BigDecimal("10.1234"), 5, 987));
 		elements.add(new Element("STOR", new BigDecimal(5), 5, 987));
 		elements.add(new Element("CPU", new BigDecimal(5000), 6, 987));
-		for (int i=0; i<100; i++) {
+		for (int i=0; i<1000; i++) {
 			int rand = Main.random.nextInt(4);
 			String capacity = "";
 			switch (rand) {
