@@ -138,6 +138,79 @@ public class Node {
 	}
 
 	public void split() {
+		//Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+this+"_beforeSplittingTable.dot", true);
+		Node prevNode = contactTable.getPrevNode();
+		Node nextNode = contactTable.getNextNode();
+		int prevFree = prevNode.getElementTable().getNumberOfFreeSlots();
+		int nextFree = nextNode.getElementTable().getNumberOfFreeSlots();
+		prevFree = prevFree > 0 ? prevFree-1 : 0;
+		nextFree = nextFree > 0 ? nextFree-1 : 0;
+		int halfSize = elementTable.size()/2;
+
+		// special case for first node in skipgraph - TODO: replace 0 with null
+		if (elementTable.getRangeStart().equals(BigDecimal.ZERO) && (nextNode != this) && (nextFree > halfSize)) {
+			// split element table
+			ElementTable newElementTable = elementTable.split();
+			// update all contacts
+			contactTable.updateAllContacts();
+			nextNode.getElementTable().extendElementTableAtStart(newElementTable, nextNode);
+		}
+		// special case for last node in skipgraph
+		else if (elementTable.getRangeEnd() == null && (prevNode != this) && (prevFree > halfSize)) {
+			// split element table
+			ElementTable tmpElementTable = elementTable.split();
+			ElementTable newElementTable = elementTable;
+			elementTable = tmpElementTable;
+			// update all contacts
+			contactTable.updateAllContacts();
+			prevNode.getElementTable().extendElementTableAtEnd(newElementTable, prevNode);
+		}
+		// distribute the elements equally on predecessor and successor
+		else if (prevNode != this && nextNode != this && prevNode != nextNode &&
+				!elementTable.getRangeStart().equals(BigDecimal.ZERO) && elementTable.getRangeEnd() != null &&
+				(prevFree+nextFree) > halfSize) {
+			double prevRatio = (double) prevFree / (prevFree + halfSize + nextFree);
+			ElementTable tmpElementTable = elementTable.split(prevRatio);
+			ElementTable prevElementTable = elementTable;
+			elementTable = tmpElementTable;
+			double nextRatio = (double) halfSize / (halfSize + nextFree);
+			ElementTable nextElementTable = elementTable.split(nextRatio);
+			contactTable.updateAllContacts();
+			prevNode.getElementTable().extendElementTableAtEnd(prevElementTable, prevNode);
+			nextNode.getElementTable().extendElementTableAtStart(nextElementTable, nextNode);
+		}
+		// otherwise create a new Node and make it join the SkipGraph as new successor on level 0
+		else {
+			// split element table
+			ElementTable newElementTable = elementTable.split();
+			// update all contacts
+			contactTable.updateAllContacts();
+
+			// local variable
+			Contact nextContact = getContactTable().getLevel(0).getNextContact();
+
+			// create new node
+			Node newNode = new Node(newElementTable);
+			// build new basic contactTable for new node
+			ContactTable newContactTable = new ContactTable(newNode);
+			newContactTable.addLevel(new ContactLevel(thisContact(), nextContact, 1));
+			newNode.setContactTable(newContactTable);
+
+			// inform NextNode of new PrevNode
+			ModifyContactsOperation setPrevOnNext = new SetContactOperation(0, 1, PREV, newNode);
+			nextContact.getNode().execute(setPrevOnNext);
+
+			// update own nextContact
+			getContactTable().getLevel(0).setNextContact(newNode);
+
+			// make newNode join the graph on all levels
+			newNode.getContactTable().joinLevels();
+		}
+		//Main.skipGraph.buildDotFile(DotFileBuilder.getFileCounter()+"_ID"+this+"_afterSplittingTable.dot", true);
+
+	}
+
+	public void split_OldBehaviour() {
 		Node nextNode = contactTable.getNextNode();
 
 		// TODO: split table so that predecessor and succor get equal amount based on their number of free slots

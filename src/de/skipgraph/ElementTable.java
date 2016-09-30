@@ -105,7 +105,7 @@ public class ElementTable {
 		//if (size() % ratio > 0) roundup = 1;
 		int splitIndex = (int)Math.ceil( size()*ratio );
 		if (splitIndex >= size()) {
-			return null;
+			splitIndex = size()-1;
 		}
 
 		List<Element> tmp = elementTable.subList(splitIndex, size());
@@ -197,14 +197,14 @@ public class ElementTable {
 
 	public void checkMinTableSize(Node node) {
 		if (size() < minSize) {
-			System.out.println("  ! table too small -> leave?");
+			System.out.println("  !ID"+node+" table too small -> leave?");
 			node.leave();
 		}
 	}
 
 	public void checkMaxTableSize(Node node) {
 		if (size() > maxSize) {
-			System.out.println("  ! table too big -> split");
+			System.out.println("  !ID"+node+" table too big -> split");
 			node.split();
 		}
 	}
