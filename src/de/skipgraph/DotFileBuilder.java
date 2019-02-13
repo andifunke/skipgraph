@@ -284,6 +284,12 @@ public class DotFileBuilder {
 		Date date = new Date( );
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat ("yyyy-MM-dd_hh-mm-ss-SSS");
 		String formatedDate = simpleDateFormat.format(date);
+
+		dir = new File("graph/");
+		if (!dir.exists()) {
+			dir.mkdir();
+		}
+
 		dir = new File("graph/"+formatedDate+"/");
 
 		if (!dir.exists()) {
