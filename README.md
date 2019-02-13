@@ -1,12 +1,12 @@
 # Skip Graph
 
-A [http://cs-www.cs.yale.edu/homes/shah/pubs/soda2003.pdf](Skip Graph) is a robust, ordered data
+A [Skip Graph](http://cs-www.cs.yale.edu/homes/shah/pubs/soda2003.pdf) is a robust, ordered data
 structure for distributed self-organizing systems such as peer-to-peer networks.
 It allows access in logarithmic time via probabilistic assignment of its nodes to higher order
 'shortcut'-levels. A Skip Graph is based on a network of doubly linked, disjoint skip lists.
 
 This Skip Graph-implementation is a sketch for
-[https://ieeexplore.ieee.org/document/8064026](PacketSkip), an ordered index structure for efficient
+[PacketSkip](https://ieeexplore.ieee.org/document/8064026), an ordered index structure for efficient
 storage and retrieval of capacity-information from network nodes. PacketSkip uses a greedy
 algorithm to govern the graph structure without any need for global knowledge.
 
